@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antigravity 核心控制台</title>
+    <link rel="stylesheet" href="style.css?v=11">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-mesh"></div>
+    
+    <div class="container">
+        <header class="glass-header">
+            <div class="logo">
+                <div class="pulse-dot"></div>
+                <h1>反重力核心控制台 (Antigravity)</h1>
+            </div>
+            <nav>
+                <div class="stat-pill">系统状态: <span class="highlight">🟢 在线护航</span></div>
+                <div class="stat-pill">v3.3 终极版</div>
+            </nav>
+        </header>
+
+        <main class="dashboard-layout">
+            <aside class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active" data-target="module-agents"><span class="icon">🤖</span> 智能体防线</li>
+                    <li class="nav-item" data-target="module-kanban"><span class="icon">📊</span> 战时态势看板</li>
+                    <li class="nav-item" data-target="module-learning"><span class="icon">🧠</span> 突触学习简报</li>
+                    <li class="nav-item" data-target="module-digest"><span class="icon">🌐</span> 社区情报简报</li>
+                    <li class="nav-item" data-target="module-skills"><span class="icon">🪄</span> 全局技能库</li>
+                    <li class="nav-item" data-target="module-terminal"><span class="icon">💻</span> 全息终视镜</li>
+                </ul>
+            </aside>
+
+            <section class="content-area">
+                
+                <!-- Agents Board -->
+                <div class="glass-card panel-section module-agents active">
+                    <h2><span class="icon">🤖</span> 智能体防线 (Neural Hive)</h2>
+                    <div id="agents-container" class="agent-list full-height-scroll">
+                        <div class="loading">🔌 正在全盘扫描多智能体编制编队...</div>
+                    </div>
+                </div>
+
+                <!-- Kanban Board -->
+                <div class="glass-card panel-section module-kanban">
+                    <h2><span class="icon">📊</span> 战时态势看板 (Global Kanban Matrix)</h2>
+                    <div class="kanban-board full-height-layout">
+                        <div class="kanban-column">
+                            <div class="kanban-header backlog">🗂️ 待办 (Pending) <span class="count" id="count-pending">0</span></div>
+                            <div class="kanban-container" id="kb-pending"></div>
+                        </div>
+                        <div class="kanban-column">
+                            <div class="kanban-header in-progress">🚀 推进中 (In Progress) <span class="count" id="count-in-progress">0</span></div>
+                            <div class="kanban-container" id="kb-in-progress"></div>
+                        </div>
+                        <div class="kanban-column">
+                            <div class="kanban-header blocker">🚨 卡点 (Blocker) <span class="count" id="count-blocker">0</span></div>
+                            <div class="kanban-container" id="kb-blocker"></div>
+                        </div>
+                        <div class="kanban-column">
+                            <div class="kanban-header done">✅ 归档 (Done) <span class="count" id="count-done">0</span></div>
+                            <div class="kanban-container" id="kb-done"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Learning Digest Panel -->
+                <div class="glass-card panel-section module-learning">
+                    <div class="digest-header-row">
+                        <h2><span class="icon">🧠</span> 突触学习简报 (AI Learning Digest)</h2>
+                        <div class="digest-date" id="learning-date">加载中...</div>
+                    </div>
+                    <div class="digest-sections full-height-scroll" id="learning-container">
+                        <div class="loading">🔍 正在扫描系统突触与记忆库增量...</div>
+                    </div>
+                </div>
+
+                <!-- Community Digest Panel -->
+                <div class="glass-card panel-section module-digest">
+                    <div class="digest-header-row">
+                        <h2><span class="icon">🌐</span> 社区情报简报 (Community Digest)</h2>
+                        <div class="digest-date" id="digest-date">加载中...</div>
+                    </div>
+                    <div class="digest-sections full-height-scroll" id="digest-container">
+                        <div class="loading">📡 正在从全球社区拉取最新情报...</div>
+                    </div>
+                </div>
+
+                <!-- Global Skills Catalog -->
+                <div class="glass-card panel-section module-skills">
+                    <h2><span class="icon">🪄</span> 全局战略技能库 (Global Skills)</h2>
+                    <div id="skills-container" class="skills-grid full-height-scroll enlarged-icons">
+                        <div class="loading">🔋 正在装载全球能力矩阵池...</div>
+                    </div>
+                </div>
+
+                <!-- Live Execution Terminal -->
+                <div class="glass-card panel-section module-terminal">
+                    <h2><span class="icon">💻</span> 全息神经元终视镜 (Live Execution Terminal)</h2>
+                    <div class="terminal-container full-height-scroll" id="terminal-stream">
+                        <div class="terminal-line"><span class="t-time">[00:00:00]</span> <span class="t-agent">@系统</span> <span class="t-msg">等待神经元接入...</span></div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js?v=4"></script>
+</body>
+</html>

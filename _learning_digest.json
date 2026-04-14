@@ -1,0 +1,63 @@
+{
+  "date": "2026-04-14",
+  "new_skills": [
+    {
+      "name": "Langflow",
+      "desc": "Langflow 是一个强大的工具，用于构建和部署人工智能驱动的代理和工作流程。"
+    },
+    {
+      "name": "Javaguide",
+      "desc": "Java面试&远程通用面试指南，覆盖计算机基础、数据库、全局、高并发、系统设计与AI应用开发"
+    },
+    {
+      "name": "Dify",
+      "desc": "用于代理工作流程开发的生产就绪平台。"
+    },
+    {
+      "name": "Langchain",
+      "desc": "代理工程平台"
+    },
+    {
+      "name": "Firecrawl",
+      "desc": "🔥 AI 的 Web 数据 API - 使用干净的 Web 数据为 AI 代理提供支持"
+    },
+    {
+      "name": "Template",
+      "desc": "新增技能特性"
+    },
+    {
+      "name": "Im-emergency-rescue",
+      "desc": "新增技能特性"
+    },
+    {
+      "name": "Surgical-code-repair",
+      "desc": "新增技能特性"
+    },
+    {
+      "name": "Ag-team-issue-protocol",
+      "desc": "新增技能特性"
+    }
+  ],
+  "updated_memories": [
+    {
+      "project": "network-automation",
+      "desc": "过去 48 小时内更新了 network-automation 项目逻辑库"
+    },
+    {
+      "project": "日常问题",
+      "desc": "过去 48 小时内更新了 日常问题 项目逻辑库"
+    },
+    {
+      "project": "TK商城",
+      "desc": "过去 48 小时内更新了 TK商城 项目逻辑库"
+    },
+    {
+      "project": "指纹手机",
+      "desc": "过去 48 小时内更新了 指纹手机 项目逻辑库"
+    },
+    {
+      "project": "ChiChatIM系统",
+      "desc": "过去 48 小时内更新了 ChiChatIM系统 项目逻辑库"
+    }
+  ]
+}
