@@ -1,0 +1,36 @@
+🧬 Antigravity 社区自进化引擎 V2.0 启动...
+   输出目录: /Users/qianxiangyunji/Antigravity/全局技能库_AG_Skills
+
+═══ 阶段 1/4：浅层情报侦察 ═══
+📡 正在抓取 GitHub Trending...
+  ✅ 获取到 10 个热门仓库
+  🌐 GitHub 描述: 10/10 条已翻译为中文
+📡 正在抓取 Hacker News...
+  ✅ 筛选出 8 条 AI 相关新闻（检查了 21 条）
+  🌐 HN 标题: 8/8 条已翻译为中文
+📡 正在检查 Awesome 列表更新...
+  ✅ 获取到 6 条 Awesome 列表更新
+📡 正在抓取 Reddit /r/MachineLearning...
+  ✅ 筛选出 7 条热门帖子
+  🌐 Reddit 标题: 7/7 条已翻译为中文
+📡 正在抓取 arXiv AI 最新论文...
+  ⚠️ 网络请求失败: http://export.arxiv.org/api/query?search_query=%28cat%3Acs.AI%20OR%20cat%3Acs.CL%20OR%20cat%3Acs.LG%29%20AND%20%28agent%20OR%20LLM%20OR%20reasoning%29&sortBy=submittedDate&sortOrder=descending&max_results=8 — The read operation timed out
+  ⚠️ arXiv 数据获取失败
+📋 每日简报已生成: /Users/qianxiangyunji/Antigravity/全局技能库_AG_Skills/_community_digest.md
+
+═══ 阶段 2/4：深度学习解析 ═══
+  ⏭️  跳过 javaguide（深度卡 1 天前更新，7天内免刷新）
+  ⏭️  跳过 langflow（深度卡 1 天前更新，7天内免刷新）
+  ⏭️  跳过 dify（深度卡 1 天前更新，7天内免刷新）
+
+═══ 阶段 3/4：汇总与验证 ═══
+   GitHub: 10 条 | HN: 8 条 | Awesome: 6 条
+   Reddit: 7 条 | arXiv: 0 篇
+   浅层技能卡: 0 张 | 深度技能卡: 0 张
+   总耗时: 68.9s
+   技能库总计: 18 张 (深度: 5, 浅层: 13)
+
+🧠 正在汇总 AI 突触学习记忆 (ag_learning)...
+  ✅ 学习简报已更新
+
+✅ ag_evolve V2.0 深度自进化引擎执行完毕 (68.9s)

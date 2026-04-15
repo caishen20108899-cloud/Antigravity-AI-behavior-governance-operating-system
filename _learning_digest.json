@@ -34,10 +34,6 @@
       "desc": "🔥 AI 的 Web 数据 API - 使用干净的 Web 数据为 AI 代理提供支持"
     },
     {
-      "name": "Template",
-      "desc": "新增技能特性"
-    },
-    {
       "name": "Deep-langflow",
       "desc": "Langflow 是一个强大的工具，用于构建和部署人工智能驱动的代理和工作流程。"
     },
@@ -46,19 +42,15 @@
       "desc": "用于代理工作流程开发的生产就绪平台。"
     },
     {
-      "name": "Surgical-code-repair",
-      "desc": "新增技能特性"
-    },
-    {
-      "name": "Ag-team-issue-protocol",
-      "desc": "新增技能特性"
-    },
-    {
       "name": "Deep-javaguide",
       "desc": "Java面试和远程通用面试指南，覆盖计算机基础、数据库、高并发、系统设计与AI应用开发"
     }
   ],
   "updated_memories": [
+    {
+      "project": "TG-BUG-Collector",
+      "desc": "过去 48 小时内更新了 TG-BUG-Collector 项目逻辑库"
+    },
     {
       "project": "日常问题",
       "desc": "过去 48 小时内更新了 日常问题 项目逻辑库"

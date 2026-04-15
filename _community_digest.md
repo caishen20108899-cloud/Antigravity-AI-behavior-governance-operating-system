@@ -4,55 +4,55 @@
 
 ## 🔥 GitHub 热门 (AI/Agent 领域)
 
-1. **[Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide)** ⭐ 154,965 [Java]
+1. **[Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide)** ⭐ 154,978 [Java]
    Java面试&远程通用面试指南，覆盖计算机基础、数据库、全局、高并发、系统设计与AI应用开发
    `agent` `context-engineering` `interview` `java` `jvm`
 
-2. **[langflow-ai/langflow](https://github.com/langflow-ai/langflow)** ⭐ 146,964 [Python]
+2. **[langflow-ai/langflow](https://github.com/langflow-ai/langflow)** ⭐ 146,982 [Python]
    Langflow 是一个强大的工具，用于构建和部署人工智能驱动的代理和工作流程。
    `agents` `chatgpt` `generative-ai` `large-language-models` `multiagent`
 
-3. **[langgenius/dify](https://github.com/langgenius/dify)** ⭐ 137,842 [TypeScript]
+3. **[langgenius/dify](https://github.com/langgenius/dify)** ⭐ 137,885 [TypeScript]
    用于代理工作流程开发的生产就绪平台。
    `agent` `agentic-ai` `agentic-framework` `agentic-workflow` `ai`
 
-4. **[langchain-ai/langchain](https://github.com/langchain-ai/langchain)** ⭐ 133,631 [Python]
+4. **[langchain-ai/langchain](https://github.com/langchain-ai/langchain)** ⭐ 133,671 [Python]
    代理工程平台
    `agents` `ai` `ai-agents` `anthropic` `chatgpt`
 
-5. **[Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)** ⭐ 105,655 [Python]
+5. **[Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)** ⭐ 105,697 [Python]
    使用 OpenAI、Anthropic、Gemini 和开源的具有 AI 代理和 RAG 的出色 LLM 应用程序集合
    `agents` `llms` `python` `rag`
 
-6. **[google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)** ⭐ 101,307 [TypeScript]
+6. **[google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)** ⭐ 101,341 [TypeScript]
    一款开源 AI 代理，可将 Gemini 的强大功能直接带入您的终端。
    `ai` `ai-agents` `cli` `gemini` `gemini-api`
 
-7. **[browser-use/browser-use](https://github.com/browser-use/browser-use)** ⭐ 87,905 [Python]
-   🌐 让 AI 代理可以访问网站。轻松在线自动化任务。
-   `ai-agents` `ai-tools` `browser-automation` `browser-use` `llm`
-
-8. **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)** ⭐ 87,584 [Python]
+7. **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)** ⭐ 88,975 [Python]
    与您共同成长的代理商
    `ai` `ai-agent` `ai-agents` `anthropic` `chatgpt`
 
-9. **[msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)** ⭐ 80,180 [Shell]
+8. **[browser-use/browser-use](https://github.com/browser-use/browser-use)** ⭐ 87,960 [Python]
+   🌐 让 AI 代理可以访问网站。轻松在线自动化任务。
+   `ai-agents` `ai-tools` `browser-automation` `browser-use` `llm`
+
+9. **[msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)** ⭐ 80,308 [Shell]
    触手可及的完整人工智能机构 - 从前端向导到 Reddit 社区忍者，从wh
 
-10. **[infiniflow/ragflow](https://github.com/infiniflow/ragflow)** ⭐ 78,118 [Python]
+10. **[infiniflow/ragflow](https://github.com/infiniflow/ragflow)** ⭐ 78,160 [Python]
    RAGFlow 是一款领先的开源检索增强生成 (RAG) 引擎，融合了尖端技术
    `agent` `agentic` `agentic-ai` `agentic-workflow` `ai`
 
 ## 📰 Hacker News 精选 (AI 相关)
 
-- [克劳德代码例程](https://code.claude.com/docs/en/routines) △620 💬358 ([讨论](https://news.ycombinator.com/item?id=47768133))
-- [我的人工智能辅助工作流程](https://www.maiobarbero.dev/articles/ai-assisted-workflow/) △39 💬22 ([讨论](https://news.ycombinator.com/item?id=47775653))
-- [Google Gemma 4 在 iPhone 上本地运行，具有完全离线的 AI 推理功能](https://www.gizmoweek.com/gemma-4-runs-iphone/) △19 💬8 ([讨论](https://news.ycombinator.com/item?id=47774971))
-- [了解 Clojure 的持久向量，pt。 1 (2013)](https://hypirion.com/musings/understanding-persistent-vector-pt-1) △83 💬21 ([讨论](https://news.ycombinator.com/item?id=47721076))
-- [将您最好的 AI 提示变成 Chrome 中的一键式工具](https://blog.google/products-and-platforms/products/chrome/skills-in-chrome/) △165 💬83 ([讨论](https://news.ycombinator.com/item?id=47768339))
-- [克劳德在某些情况下可能需要身份验证](https://support.claude.com/en/articles/14328960-identity-verification-on-claude) △10  ([讨论](https://news.ycombinator.com/item?id=47775633))
-- [对 Microsoft 用户的电子邮件传送进行故障排除](https://rozumem.xyz/posts/14) △75 💬19 ([讨论](https://news.ycombinator.com/item?id=47738962))
-- [科学家发现为什么面包可以在没有额外热量的情况下导致体重增加](https://www.sciencedaily.com/releases/2026/04/260414075637.htm) △19 💬5 ([讨论](https://news.ycombinator.com/item?id=47775595))
+- [Show HN：Libretto – 使 AI 浏览器自动化具有确定性](https://github.com/saffron-health/libretto) △24 💬4 ([讨论](https://news.ycombinator.com/item?id=47780971))
+- [修复因椅子静电而导致显示器黑屏、关闭或闪烁的问题](https://aalonso.dev/blog/2023/how-to-fix-monitor-that-goes-black-off-due-to-static-electricity-in-chair/) △9 💬10 ([讨论](https://news.ycombinator.com/item?id=47738081))
+- [双子座机器人-ER 1.6](https://deepmind.google/blog/gemini-robotics-er-1-6/) △141 💬41 ([讨论](https://news.ycombinator.com/item?id=47779094))
+- [CPU 并没有死。 Gemma2B 在测试中击败了 GPT-3.5 Turbo，使其声名鹊起](https://seqpu.com/CPUsArentDead/) △5  ([讨论](https://news.ycombinator.com/item?id=47781998))
+- [Pretty Fish：更好的美人鱼图编辑器](https://pretty.fish/) △88 💬19 ([讨论](https://news.ycombinator.com/item?id=47708627))
+- [Google Gemma 4 在 iPhone 上本地运行，具有完全离线的 AI 推理功能](https://www.gizmoweek.com/gemma-4-runs-iphone/) △220 💬150 ([讨论](https://news.ycombinator.com/item?id=47774971))
+- [研究：回归基础的方法在语言分析方面可以匹配或超越人工智能](https://www.manchester.ac.uk/about/news/back-to-basics-approach-can-match-or-outperform-ai/) △27 💬10 ([讨论](https://news.ycombinator.com/item?id=47778050))
+- [AI裁决引发美国律师警告：你的聊天记录可能会被用来对付你](https://www.reuters.com/legal/government/ai-ruling-prompts-warnings-us-lawyers-your-chats-could-be-used-against-you-2026-04-15/) △107 💬65 ([讨论](https://news.ycombinator.com/item?id=47778308))
 
 ## 📚 Awesome 列表动态
 
@@ -69,12 +69,11 @@ Co-authored-by: kaderosio <info@kaderos.io>
 
 ## 🔴 Reddit /r/MachineLearning (热门)
 
-- [正在看一篇 ICLR 2025 Oral 论文，我很惊讶它竟然被口头发表了 [D]](https://www.reddit.com/r/MachineLearning/comments/1slxqac/was_looking_at_a_iclr_2025_oral_paper_and_i_am/) △35 💬12 [Discussion] ([讨论](https://reddit.com/r/MachineLearning/comments/1slxqac/was_looking_at_a_iclr_2025_oral_paper_and_i_am/))
-- [可以将模型分解为图数据库[N]](https://www.reddit.com/r/MachineLearning/comments/1slmfmw/you_can_decompose_models_into_a_graph_database_n/) △41 💬17 [News] ([讨论](https://reddit.com/r/MachineLearning/comments/1slmfmw/you_can_decompose_models_into_a_graph_database_n/))
-- [ICML 的 AC 指南是什么？ （或者：ICML qq帖）[D]](https://www.reddit.com/r/MachineLearning/comments/1sl9zza/what_is_the_ac_guidance_for_icml_or_icml_qq/) △26 💬28 [Discussion] ([讨论](https://reddit.com/r/MachineLearning/comments/1sl9zza/what_is_the_ac_guidance_for_icml_or_icml_qq/))
-- [“我不知道！”：教导神经网络放弃光环损失。 [R]](https://www.reddit.com/r/MachineLearning/comments/1skzuhd/i_dont_know_teaching_neural_networks_to_abstain/) △70 💬26 [Research] ([讨论](https://reddit.com/r/MachineLearning/comments/1skzuhd/i_dont_know_teaching_neural_networks_to_abstain/))
-- [我从头开始将纯尖峰神经网络 (SNN) 缩放至 1.088B 参数。预算用完了，但这是我发现的 [R]](https://www.reddit.com/r/MachineLearning/comments/1skql34/i_scaled_a_pure_spiking_neural_network_snn_to/) △126 💬53 [Research] ([讨论](https://reddit.com/r/MachineLearning/comments/1skql34/i_scaled_a_pure_spiking_neural_network_snn_to/))
-- [[N] AMA 公告：Max Welling（VAE、GNN、AI4Science 和 CuspAI）](https://www.reddit.com/r/MachineLearning/comments/1skil2g/n_ama_announcement_max_welling_vaes_gnns/) △100 💬54 [News] ([讨论](https://reddit.com/r/MachineLearning/comments/1skil2g/n_ama_announcement_max_welling_vaes_gnns/))
+- [正在看一篇 ICLR 2025 Oral 论文，我很惊讶它竟然被口头发表了 [D]](https://www.reddit.com/r/MachineLearning/comments/1slxqac/was_looking_at_a_iclr_2025_oral_paper_and_i_am/) △57 💬17 [Discussion] ([讨论](https://reddit.com/r/MachineLearning/comments/1slxqac/was_looking_at_a_iclr_2025_oral_paper_and_i_am/))
+- [可以将模型分解为图数据库[N]](https://www.reddit.com/r/MachineLearning/comments/1slmfmw/you_can_decompose_models_into_a_graph_database_n/) △45 💬20 [News] ([讨论](https://reddit.com/r/MachineLearning/comments/1slmfmw/you_can_decompose_models_into_a_graph_database_n/))
+- [ICML 的 AC 指南是什么？ （或者：ICML qq帖）[D]](https://www.reddit.com/r/MachineLearning/comments/1sl9zza/what_is_the_ac_guidance_for_icml_or_icml_qq/) △27 💬29 [Discussion] ([讨论](https://reddit.com/r/MachineLearning/comments/1sl9zza/what_is_the_ac_guidance_for_icml_or_icml_qq/))
+- [“我不知道！”：教导神经网络放弃光环损失。 [R]](https://www.reddit.com/r/MachineLearning/comments/1skzuhd/i_dont_know_teaching_neural_networks_to_abstain/) △72 💬26 [Research] ([讨论](https://reddit.com/r/MachineLearning/comments/1skzuhd/i_dont_know_teaching_neural_networks_to_abstain/))
+- [我从头开始将纯尖峰神经网络 (SNN) 缩放至 1.088B 参数。预算用完了，但这是我发现的 [R]](https://www.reddit.com/r/MachineLearning/comments/1skql34/i_scaled_a_pure_spiking_neural_network_snn_to/) △131 💬53 [Research] ([讨论](https://reddit.com/r/MachineLearning/comments/1skql34/i_scaled_a_pure_spiking_neural_network_snn_to/))
 
 ## 📄 arXiv 最新 AI 论文
 
@@ -105,7 +104,7 @@ Co-authored-by: kaderosio <info@kaderos.io>
 
 ## 🎯 建议关注
 
-> 发现 **[Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide)** (⭐154,965) 值得深入研究，可能对 Antigravity 工作流有帮助。
+> 发现 **[Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide)** (⭐154,978) 值得深入研究，可能对 Antigravity 工作流有帮助。
 
 ---
-*由 ag_evolve V1.0 生成 | 扫描时间: 2026-04-15 16:08 UTC*
+*由 ag_evolve V1.0 生成 | 扫描时间: 2026-04-15 23:31 UTC*

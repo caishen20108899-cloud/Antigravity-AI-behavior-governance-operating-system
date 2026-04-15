@@ -326,7 +326,7 @@ def fetch_arxiv_papers():
     results = []
 
     # 搜索 AI Agent 相关论文，按最近提交排序
-    query = quote("(cat:cs.AI OR cat:cs.CL OR cat:cs.LG) AND (agent OR LLM OR reasoning)")
+    query = quote("(cat:cs.AI OR cat:cs.CL OR cat:cs.LG) AND (all:agent OR all:LLM OR all:reasoning)")
     url = f"http://export.arxiv.org/api/query?search_query={query}&sortBy=submittedDate&sortOrder=descending&max_results=8"
 
     xml_text = _fetch_text(url)

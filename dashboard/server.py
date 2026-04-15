@@ -317,7 +317,7 @@ class DashboardHandler(http.server.SimpleHTTPRequestHandler):
                     reddit_section = re.search(r'## 🔴 Reddit.*?\n(.*?)(?=\n## )', content, re.DOTALL)
                     if reddit_section:
                         for m in re.finditer(
-                            r'-\s*\[([^\]]+)\]\(([^)]+)\)\s*(?:△(\d+))?\s*(?:💬(\d+))?\s*(?:\[([^\]]*)\])?\s*(?:\(\[讨论\]\(([^)]+)\)\))?',
+                            r'-\s*\[(.*?)\]\(([^)]+)\)\s*(?:△(\d+))?\s*(?:💬(\d+))?\s*(?:\[([^\]]*)\])?\s*(?:\(\[讨论\]\(([^)]+)\)\))?',
                             reddit_section.group(1)
                         ):
                             digest.setdefault('reddit', []).append({
