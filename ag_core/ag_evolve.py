@@ -21,8 +21,10 @@ ag_evolve.py — Antigravity 社区自进化引擎 (Community Evolution Engine)
 依赖: 零外部依赖，仅用 Python 标准库
 """
 
+import base64
 import json
 import os
+import re
 import ssl
 import sys
 import time
@@ -373,8 +375,7 @@ def fetch_arxiv_papers():
 # ──────────────── 深度仓库解析 (V2.0 核心) ────────────────
 
 
-import base64
-import re
+# base64 和 re 已移至文件顶部 import 区域
 
 
 def deep_analyze_repo(repo):

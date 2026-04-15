@@ -1,15 +1,23 @@
 #!/bin/bash
 # Antigravity 全频段事件广播网关 (供 LLM 使用)
 # 用法: sh ag_log "@角色" "事件类型(MessageThinking/MessageStatus/MessageToolResult/MessageError)" "内容"
+# 修复: 使用 python3 安全序列化 JSON，消除引号/换行符等注入崩坏
 
 AGENT=$1
 TYPE=$2
 CONTENT=$3
-TIMESTAMP=$(date +%s.%N)
+TIMESTAMP=$(python3 -c "import time; print(time.time())")
 
 FILE="/Users/qianxiangyunji/.gemini/antigravity/events.jsonl"
 
-# 生成 JSON 单行
-JSON_STR="{\"timestamp\": ${TIMESTAMP}, \"agent\": \"${AGENT}\", \"type\": \"${TYPE}\", \"content\": \"${CONTENT}\"}"
-
-echo "$JSON_STR" >> "$FILE"
+# 使用 python3 安全构造 JSON，彻底杜绝特殊字符导致的解析崩坏
+python3 -c "
+import json, sys
+event = {
+    'timestamp': float(sys.argv[1]),
+    'agent': sys.argv[2],
+    'type': sys.argv[3],
+    'content': sys.argv[4]
+}
+print(json.dumps(event, ensure_ascii=False))
+" "$TIMESTAMP" "$AGENT" "$TYPE" "$CONTENT" >> "$FILE"
