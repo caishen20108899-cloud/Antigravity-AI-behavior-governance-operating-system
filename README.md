@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/版本-V3.3_Archon--Gate-blueviolet?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/版本-V3.3.1_Archon--Gate-blueviolet?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/依赖-零外部依赖-success?style=for-the-badge" />
   <img src="https://img.shields.io/badge/License-Private-red?style=for-the-badge" />
@@ -22,14 +22,14 @@ Antigravity 不是一个 IDE，也不是一个 Agent 框架。它是一套刻入
 ## 📐 系统架构
 
 ```
-┌─────────────────────── Antigravity V3.3 ───────────────────────┐
+┌─────────────────────── Antigravity V3.3.1 ───────────────────────┐
 │                                                                 │
 │  📜 GEMINI.md (11条铁律宪法)         ← AI 行为的最高法律        │
 │                                                                 │
 │  ⚙️ ag_core/ ─────────────────────── ← 核心引擎层              │
 │  ├── middleware.py    4层洋葱中间件管线 (Archon-Gate)            │
 │  ├── dispatcher.py    并发调度器 V3.1 (信号量 + payload 透传)   │
-│  ├── event_logger.py  事件日志写入器                             │
+│  ├── event_logger.py  事件日志写入器 (已修复 JSON 逃逸注入)       │
 │  ├── ag_indexer.py    代码图谱引擎 (AST/Regex 多语言解析)       │
 │  ├── ag_evolve.py     社区自进化引擎 (6源信息抓取 + 翻译)       │
 │  ├── ag_learning.py   深度学习引擎 (README/源码/API 解析)       │
@@ -42,7 +42,7 @@ Antigravity 不是一个 IDE，也不是一个 Agent 框架。它是一套刻入
 │  └── style.css        赛博朋克风格视觉                          │
 │                                                                 │
 │  🔧 工具链 ───────────────────────── ← 独立可执行工具           │
-│  ├── ag_log            跨窗口神经元发报器 (Shell)                │
+│  ├── ag_log            跨窗口神经元发报器 (Shell 安全序列化版)   │
 │  ├── ag_init.sh        项目初始化脚手架                          │
 │  ├── ag_memory_mgr.py  记忆管理器                               │
 │  └── start_dashboard.sh 大盘一键启动器                           │
@@ -287,7 +287,7 @@ sh ag_log "@Commander" "MessageStatus" "系统已就绪"
 ├── ag_core/                    # 核心引擎
 │   ├── middleware.py           # 4层洋葱中间件
 │   ├── dispatcher.py           # 并发调度器
-│   ├── event_logger.py         # 事件日志
+│   ├── event_logger.py         # 事件日志(安全)
 │   ├── ag_indexer.py           # 代码图谱引擎
 │   ├── ag_evolve.py            # 社区自进化引擎
 │   ├── ag_learning.py          # 深度学习引擎
@@ -302,7 +302,7 @@ sh ag_log "@Commander" "MessageStatus" "系统已就绪"
 │       ├── role.md             # 角色定义
 │       └── task_board.md       # 任务看板
 ├── _trending_skills/           # 自进化技能卡 (自动生成)
-├── ag_log                      # 跨窗口神经元发报器
+├── ag_log                      # 跨窗口神经元发报器(安全防注入版)
 ├── ag_init.sh                  # 项目初始化脚手架
 ├── ag_memory_mgr.py            # 记忆管理器
 ├── start_dashboard.sh          # 大盘启动器
@@ -321,6 +321,7 @@ sh ag_log "@Commander" "MessageStatus" "系统已就绪"
 - [x] V3.1 — 多智能体协作框架 + War Room 大盘
 - [x] V3.2 — Archon-Gate 中间件 + 神经元发报 + 11条铁律
 - [x] V3.3 — 代码图谱引擎 + 社区自进化 + 深度学习技能卡
+- [x] V3.3.1 — 核心引擎漏洞净化 (ag_log json逃逸防护 / Archon-Gate 精准校验)
 - [ ] V3.4 — MCP 协议接入 (让任何 IDE 调用 Antigravity 记忆)
 - [ ] V3.5 — 基于 Neo4j 的项目知识图谱
 - [ ] V4.0 — 真并行 Agent 隔离 (Docker 容器级)
@@ -336,3 +337,4 @@ sh ag_log "@Commander" "MessageStatus" "系统已就绪"
 <p align="center">
   <b>Antigravity — 反重力。让 AI 突破一次性工具的重力束缚，飞升为可信赖的数字军团。</b>
 </p>
+
