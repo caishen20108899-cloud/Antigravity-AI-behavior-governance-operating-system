@@ -22,6 +22,8 @@ class DashboardHandler(http.server.SimpleHTTPRequestHandler):
             skills = []
             import re
             for skill_file in BASE_DIR.glob('*.agskill.md'):
+                if skill_file.stem == 'template.agskill':
+                    continue
                 desc = f"Antigravity 全局能力卡片: {skill_file.stem}"
                 display_name = skill_file.name
                 try:
@@ -88,35 +90,32 @@ class DashboardHandler(http.server.SimpleHTTPRequestHandler):
 
             # 2. 匹配并映射展示格式
             agents_map = {}
+            role_map = {
+                "commander": "总司令 (Commander)",
+                "architect": "发改委 (Architect)",
+                "backend_engine": "基建部 (Backend)",
+                "backend": "基建部 (Backend)",
+                "engineer": "基建部 (Backend)",
+                "frontend": "宣发部 (Frontend)",
+                "web_craft": "宣发部 (Frontend)",
+                "android_craft": "装备部 (Mobile)",
+                "ios_craft": "装备部 (Mobile)",
+                "mobile": "装备部 (Mobile)",
+                "security_shield": "国安部 (Security)",
+                "security": "国安部 (Security)",
+                "devops": "后勤部 (DevOps)",
+                "qa": "后勤部 (DevOps)",
+                "quality_gate": "后勤部 (DevOps)"
+            }
             for agents_dir in projects_dir.glob('*/AGENTS'):
                 if agents_dir.is_dir():
+                    project_name = agents_dir.parent.name
                     for role_dir in agents_dir.iterdir():
                         if role_dir.is_dir() and (role_dir / 'role.md').exists():
                             cn_role = role_dir.name.replace('_', ' ').title()
-                            
-                            # 标准 7 角色映射池（合并重复）
-                            role_map = {
-                                "commander": "总司令 (Commander)",
-                                "architect": "发改委 (Architect)",
-                                "backend_engine": "基建部 (Backend)",
-                                "backend": "基建部 (Backend)",
-                                "engineer": "基建部 (Backend)",
-                                "frontend": "宣发部 (Frontend)",
-                                "web_craft": "宣发部 (Frontend)",
-                                "android_craft": "装备部 (Mobile)",
-                                "ios_craft": "装备部 (Mobile)",
-                                "mobile": "装备部 (Mobile)",
-                                "security_shield": "国安部 (Security)",
-                                "security": "国安部 (Security)",
-                                "devops": "后勤部 (DevOps)",
-                                "qa": "后勤部 (DevOps)",
-                                "quality_gate": "后勤部 (DevOps)"
-                            }
-                            
                             key = role_dir.name.lower()
                             display_name = role_map.get(key, cn_role)
                             
-                            # 判定是否在活跃名单中
                             stripped_key = key.replace('_', '')
                             is_active = False
                             for ar in active_roles:
@@ -127,9 +126,13 @@ class DashboardHandler(http.server.SimpleHTTPRequestHandler):
                             if display_name not in agents_map:
                                 agents_map[display_name] = {
                                     "role": display_name,
-                                    "type": "特种作战群",
+                                    "project": project_name,
                                     "status": "🟢 攻坚作业中" if is_active else "💤 挂机驻防"
                                 }
+                            else:
+                                existing = agents_map[display_name]
+                                if existing.get('project') and project_name not in existing['project']:
+                                    existing['project'] += f" / {project_name}"
             
             agents = list(agents_map.values())
             self.wfile.write(json.dumps(agents).encode('utf-8'))
@@ -253,6 +256,10 @@ class DashboardHandler(http.server.SimpleHTTPRequestHandler):
             digest_file = BASE_DIR / '_community_digest.md'
             if digest_file.exists():
                 digest['raw_exists'] = True
+                import time as _time2
+                age_hours = (_time2.time() - os.stat(digest_file).st_mtime) / 3600
+                digest['is_stale'] = age_hours > 24
+                digest['age_hours'] = round(age_hours, 1)
                 try:
                     with open(digest_file, 'r', encoding='utf-8') as f:
                         content = f.read()
@@ -306,6 +313,36 @@ class DashboardHandler(http.server.SimpleHTTPRequestHandler):
                                 'message': m.group(3).strip(),
                             })
 
+                    # 解析 Reddit 板块
+                    reddit_section = re.search(r'## 🔴 Reddit.*?\n(.*?)(?=\n## )', content, re.DOTALL)
+                    if reddit_section:
+                        for m in re.finditer(
+                            r'-\s*\[([^\]]+)\]\(([^)]+)\)\s*(?:△(\d+))?\s*(?:💬(\d+))?\s*(?:\[([^\]]*)\])?\s*(?:\(\[讨论\]\(([^)]+)\)\))?',
+                            reddit_section.group(1)
+                        ):
+                            digest.setdefault('reddit', []).append({
+                                'title': m.group(1),
+                                'url': m.group(2),
+                                'score': m.group(3) or '0',
+                                'comments': m.group(4) or '0',
+                                'flair': m.group(5) or '',
+                                'reddit_url': m.group(6) or '',
+                            })
+
+                    # 解析 arXiv 板块
+                    arxiv_section = re.search(r'## 📄 arXiv.*?\n(.*?)(?=\n## )', content, re.DOTALL)
+                    if arxiv_section:
+                        for m in re.finditer(
+                            r'-\s*\*\*\[([^\]]+)\]\(([^)]+)\)\*\*\s*\(([^)]*)\)\s*\n\s*(.+)',
+                            arxiv_section.group(1)
+                        ):
+                            digest.setdefault('arxiv', []).append({
+                                'title': m.group(1),
+                                'url': m.group(2),
+                                'date': m.group(3),
+                                'summary': m.group(4).strip(),
+                            })
+
                     # 提取建议
                     sug_section = re.search(r'## 🎯 建议关注.*?\n>\s*(.+)', content)
                     if sug_section:
@@ -321,12 +358,16 @@ class DashboardHandler(http.server.SimpleHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
+            import time as _time
             learning_file = BASE_DIR / '_learning_digest.json'
-            data = {"date": "", "new_skills": [], "updated_memories": []}
+            data = {"date": "", "new_skills": [], "updated_memories": [], "is_stale": True}
             if learning_file.exists():
                 try:
                     with open(learning_file, 'r', encoding='utf-8') as f:
                         data = json.load(f)
+                    age_hours = (_time.time() - os.stat(learning_file).st_mtime) / 3600
+                    data['is_stale'] = age_hours > 24
+                    data['age_hours'] = round(age_hours, 1)
                 except Exception:
                     pass
             self.wfile.write(json.dumps(data, ensure_ascii=False).encode('utf-8'))

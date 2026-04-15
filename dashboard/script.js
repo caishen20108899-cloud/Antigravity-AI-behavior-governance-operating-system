@@ -1,4 +1,4 @@
-let currentHash = { agents: "", skills: "", issues: "" };
+let currentHash = { agents: "", skills: "", issues: "", events: "", digest: "", learning: "" };
 
 function fetchData() {
     // Fetch Agents Data
@@ -18,9 +18,12 @@ function fetchData() {
                 data.forEach(agent => {
                     const el = document.createElement('div');
                     el.className = 'agent-item';
+                    const isActive = agent.status.includes('攻坚');
+                    if (isActive) el.classList.add('agent-active');
                     el.innerHTML = `
                         <div>
                             <div class="agent-role">@${agent.role.toUpperCase()}</div>
+                            <div class="agent-project">${agent.project || '全局'}</div>
                         </div>
                         <div class="agent-status">${agent.status}</div>
                     `;
@@ -70,7 +73,6 @@ function fetchData() {
             const kbBlocker = document.getElementById('kb-blocker');
             const kbDone = document.getElementById('kb-done');
 
-            // clear all
             [kbPending, kbProgress, kbBlocker, kbDone].forEach(el => el.innerHTML = '');
             let counts = { pending: 0, progress: 0, blocker: 0, done: 0 };
 
@@ -81,7 +83,6 @@ function fetchData() {
                 let col = kbPending;
                 let typeColor = '#94a3b8';
 
-                // parse status
                 if (rawText.includes('[In-Progress]')) {
                     col = kbProgress;
                     counts.progress++;
@@ -99,12 +100,10 @@ function fetchData() {
                     counts.pending++;
                 }
 
-                // Extract assignee
                 let assignee = "@系统";
                 const assignMatch = rawText.match(/指派:\s*\[(@[^\]]+)\]/);
                 if (assignMatch) assignee = assignMatch[1];
                 
-                // Extract Issue ID
                 let issueId = "Task";
                 const idMatch = rawText.match(/\[Issue-([^\]]+)\]/);
                 if (idMatch) issueId = idMatch[1];
@@ -155,7 +154,7 @@ function fetchData() {
                     el.innerHTML = `<span class="t-time">[${timeStr}]</span> <span class="t-agent">${evt.agent}</span> <span class="${cssClass}">${prefix}${evt.content}</span>`;
                     terminal.appendChild(el);
                 });
-                terminal.scrollTop = terminal.scrollHeight; // Auto-scroll to bottom
+                terminal.scrollTop = terminal.scrollHeight;
             }
         })
         .catch(err => console.error("Error fetching events:", err));
@@ -176,11 +175,15 @@ function fetchData() {
                 return;
             }
 
-            dateEl.textContent = data.date ? `📅 ${data.date}` : '';
+            let dateText = data.date ? `📅 ${data.date}` : '';
+            if (data.is_stale) {
+                dateText += ` <span class="stale-badge">⚠️ ${Math.round(data.age_hours)}h ago · 需运行 ag_evolve 刷新</span>`;
+            }
+            dateEl.innerHTML = dateText;
 
             let html = '<div class="digest-grid">';
 
-            // GitHub Trending 板块
+            // GitHub Trending
             html += '<div class="digest-section">';
             html += '<div class="digest-section-title"><span class="digest-icon gh-icon">🔥</span> GitHub 热门</div>';
             if (data.github && data.github.length > 0) {
@@ -202,7 +205,7 @@ function fetchData() {
             }
             html += '</div>';
 
-            // Hacker News 板块
+            // Hacker News
             html += '<div class="digest-section">';
             html += '<div class="digest-section-title"><span class="digest-icon hn-icon">📰</span> Hacker News</div>';
             if (data.hackernews && data.hackernews.length > 0) {
@@ -223,7 +226,7 @@ function fetchData() {
             }
             html += '</div>';
 
-            // Awesome 列表 + 建议
+            // Awesome
             html += '<div class="digest-section">';
             html += '<div class="digest-section-title"><span class="digest-icon aw-icon">📚</span> Awesome 动态</div>';
             if (data.awesome && data.awesome.length > 0) {
@@ -239,8 +242,47 @@ function fetchData() {
             } else {
                 html += '<div class="digest-empty">近期无更新</div>';
             }
+            html += '</div>';
 
-            // 建议关注
+            // Reddit /r/MachineLearning
+            html += '<div class="digest-section">';
+            html += '<div class="digest-section-title"><span class="digest-icon" style="color:#ff4500;">🔴</span> Reddit ML</div>';
+            if (data.reddit && data.reddit.length > 0) {
+                data.reddit.forEach(item => {
+                    const flairBadge = item.flair ? `<span class="digest-lang" style="background:rgba(255,69,0,0.15);color:#ff4500;">${item.flair}</span>` : '';
+                    html += `
+                        <a href="${item.reddit_url || item.url}" target="_blank" class="digest-item">
+                            <div class="digest-item-title">${item.title}</div>
+                            <div class="digest-item-meta">
+                                <span>△${item.score}</span>
+                                <span>💬${item.comments}</span>
+                            </div>
+                            ${flairBadge}
+                        </a>
+                    `;
+                });
+            } else {
+                html += '<div class="digest-empty">数据暂不可用</div>';
+            }
+            html += '</div>';
+
+            // arXiv Papers
+            html += '<div class="digest-section">';
+            html += '<div class="digest-section-title"><span class="digest-icon" style="color:#b31b1b;">📄</span> arXiv 论文</div>';
+            if (data.arxiv && data.arxiv.length > 0) {
+                data.arxiv.forEach(item => {
+                    html += `
+                        <a href="${item.url}" target="_blank" class="digest-item">
+                            <div class="digest-item-title" style="font-size:0.72rem;">${item.title}</div>
+                            <div class="digest-item-desc">${item.summary}</div>
+                            <div class="digest-aw-date">${item.date}</div>
+                        </a>
+                    `;
+                });
+            } else {
+                html += '<div class="digest-empty">数据暂不可用</div>';
+            }
+
             if (data.suggestion) {
                 html += `
                     <div class="digest-suggestion">
@@ -249,7 +291,6 @@ function fetchData() {
                 `;
             }
             html += '</div>';
-
             html += '</div>';
             container.innerHTML = html;
         })
@@ -266,11 +307,15 @@ function fetchData() {
             const container = document.getElementById('learning-container');
             const dateEl = document.getElementById('learning-date');
 
-            dateEl.textContent = data.date ? `📅 ${data.date}` : '';
+            let dateText = data.date ? `📅 ${data.date}` : '';
+            if (data.is_stale) {
+                dateText += ` <span class="stale-badge">⚠️ ${Math.round(data.age_hours || 0)}h ago · 数据待刷新</span>`;
+            }
+            dateEl.innerHTML = dateText;
 
             let html = '<div class="digest-grid" style="grid-template-columns: 1fr 1fr;">';
 
-            // ── 左侧：新掌握技能 ──
+            // Left: New Skills
             html += '<div class="digest-column">';
             html += '<h3 class="digest-col-title">🃏 新增神经认知 (New Skills)</h3>';
             if (data.new_skills && data.new_skills.length > 0) {
@@ -289,7 +334,7 @@ function fetchData() {
             }
             html += '</div>';
 
-            // ── 右侧：记忆库同步 ──
+            // Right: Memory Sync
             html += '<div class="digest-column">';
             html += '<h3 class="digest-col-title">📂 系统记忆同步 (Memory Sync)</h3>';
             if (data.updated_memories && data.updated_memories.length > 0) {
@@ -315,30 +360,20 @@ function fetchData() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetchData(); // 初始渲染调用所有拉取逻辑
+    fetchData();
 
-    // Setup Navigation
     const navItems = document.querySelectorAll('.nav-item');
     const panelSections = document.querySelectorAll('.panel-section');
 
     navItems.forEach(item => {
         item.addEventListener('click', () => {
-            // Remove active from all navs
             navItems.forEach(n => n.classList.remove('active'));
-            // Add active to clicked nav
             item.classList.add('active');
-
-            // Hide all panels
-            panelSections.forEach(panel => {
-                panel.classList.remove('active');
-            });
-
-            // Show target panel
+            panelSections.forEach(panel => { panel.classList.remove('active'); });
             const target = item.getAttribute('data-target');
             document.querySelector(`.${target}`).classList.add('active');
         });
     });
 
-    // Auto-refresh data every 3 seconds (as requested by original realtime needs)
     setInterval(fetchData, 3000);
 });

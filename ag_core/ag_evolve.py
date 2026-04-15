@@ -9,7 +9,9 @@ ag_evolve.py — Antigravity 社区自进化引擎 (Community Evolution Engine)
     1. GitHub Trending (API)
     2. Hacker News Top Stories (API + 关键词过滤)
     3. Awesome 列表监控 (GitHub commits API)
-    4. MCP Server Registry (预留)
+    4. Reddit /r/MachineLearning (RSS)
+    5. arXiv AI 每日论文 (API)
+    6. MCP Server Registry (预留)
 
 用法:
     python3 ag_evolve.py
@@ -271,6 +273,100 @@ def fetch_awesome_updates():
                     })
 
     print(f"  ✅ 获取到 {len(results)} 条 Awesome 列表更新")
+    return results
+
+
+def fetch_reddit_ml():
+    """
+    抓取 Reddit /r/MachineLearning 热门帖子。
+    使用 Reddit JSON API（免认证）。
+    """
+    print("📡 正在抓取 Reddit /r/MachineLearning...")
+    results = []
+
+    url = "https://www.reddit.com/r/MachineLearning/hot.json?limit=15&t=day"
+    data = _fetch_json(url, headers={"User-Agent": "Antigravity-Evolve/2.1"})
+
+    if data and data.get('data', {}).get('children'):
+        for post in data['data']['children']:
+            d = post.get('data', {})
+            title = d.get('title', '')
+            score = d.get('score', 0)
+            if score < 20:
+                continue
+            flair = d.get('link_flair_text', '')
+            results.append({
+                'title': title,
+                'url': d.get('url', ''),
+                'score': score,
+                'comments': d.get('num_comments', 0),
+                'flair': flair or 'Discussion',
+                'reddit_url': f"https://reddit.com{d.get('permalink', '')}",
+            })
+        results = results[:8]
+        print(f"  ✅ 筛选出 {len(results)} 条热门帖子")
+
+        if results:
+            titles = [r['title'] for r in results]
+            zh_titles = _translate_batch(titles, label="Reddit 标题")
+            for i, r in enumerate(results):
+                r['title_zh'] = zh_titles[i]
+    else:
+        print("  ⚠️ Reddit 数据获取失败（可能需要代理）")
+
+    return results
+
+
+def fetch_arxiv_papers():
+    """
+    抓取 arXiv 最新 AI/ML 论文摘要。
+    使用 arXiv Atom API（免认证）。
+    """
+    print("📡 正在抓取 arXiv AI 最新论文...")
+    results = []
+
+    # 搜索 AI Agent 相关论文，按最近提交排序
+    query = quote("(cat:cs.AI OR cat:cs.CL OR cat:cs.LG) AND (agent OR LLM OR reasoning)")
+    url = f"http://export.arxiv.org/api/query?search_query={query}&sortBy=submittedDate&sortOrder=descending&max_results=8"
+
+    xml_text = _fetch_text(url)
+    if xml_text:
+        # 简易 XML 解析（避免引入 lxml 依赖）
+        entries = re.findall(r'<entry>(.*?)</entry>', xml_text, re.DOTALL)
+        for entry in entries[:8]:
+            title_m = re.search(r'<title>(.*?)</title>', entry, re.DOTALL)
+            summary_m = re.search(r'<summary>(.*?)</summary>', entry, re.DOTALL)
+            id_m = re.search(r'<id>(.*?)</id>', entry)
+            published_m = re.search(r'<published>(.*?)</published>', entry)
+
+            if title_m:
+                title = title_m.group(1).strip().replace('\n', ' ')
+                summary = (summary_m.group(1).strip().replace('\n', ' ') if summary_m else '')[:200]
+                arxiv_url = id_m.group(1).strip() if id_m else ''
+                pub_date = published_m.group(1)[:10] if published_m else ''
+
+                results.append({
+                    'title': title,
+                    'summary': summary,
+                    'url': arxiv_url,
+                    'date': pub_date,
+                })
+
+        print(f"  ✅ 获取到 {len(results)} 篇最新论文")
+
+        if results:
+            titles = [r['title'] for r in results]
+            zh_titles = _translate_batch(titles, label="arXiv 标题")
+            for i, r in enumerate(results):
+                r['title_zh'] = zh_titles[i]
+
+            summaries = [r['summary'] for r in results]
+            zh_summaries = _translate_batch(summaries, label="arXiv 摘要")
+            for i, r in enumerate(results):
+                r['summary_zh'] = zh_summaries[i]
+    else:
+        print("  ⚠️ arXiv 数据获取失败")
+
     return results
 
 
@@ -643,7 +739,7 @@ metadata:
 # ────────────────────── 报告生成器 ──────────────────────
 
 
-def generate_digest(github_data, hn_data, awesome_data):
+def generate_digest(github_data, hn_data, awesome_data, reddit_data=None, arxiv_data=None):
     """生成 Markdown 格式的每日社区简报"""
     date_str = datetime.now().strftime('%Y-%m-%d')
     lines = []
@@ -699,6 +795,36 @@ def generate_digest(github_data, hn_data, awesome_data):
         lines.append("*近期无更新*")
     lines.append("")
 
+    # ── Reddit /r/MachineLearning ──
+    lines.append("## 🔴 Reddit /r/MachineLearning (热门)")
+    lines.append("")
+    if reddit_data:
+        for item in reddit_data:
+            display_title = item.get('title_zh') or item['title']
+            flair = f"[{item.get('flair', '')}]" if item.get('flair') else ""
+            lines.append(
+                f"- [{display_title}]({item['url']}) "
+                f"△{item.get('score', 0)} 💬{item.get('comments', 0)} {flair} "
+                f"([讨论]({item.get('reddit_url', '')}))"
+            )
+    else:
+        lines.append("*数据暂不可用*")
+    lines.append("")
+
+    # ── arXiv 最新论文 ──
+    lines.append("## 📄 arXiv 最新 AI 论文")
+    lines.append("")
+    if arxiv_data:
+        for item in arxiv_data:
+            display_title = item.get('title_zh') or item['title']
+            summary = item.get('summary_zh') or item.get('summary', '')[:100]
+            lines.append(f"- **[{display_title}]({item['url']})** ({item.get('date', '')})")
+            lines.append(f"  {summary}")
+            lines.append("")
+    else:
+        lines.append("*数据暂不可用*")
+    lines.append("")
+
     # ── 建议学习 ──
     lines.append("## 🎯 建议关注")
     lines.append("")
@@ -741,13 +867,15 @@ def main():
     os.makedirs(TRENDING_DIR, exist_ok=True)
 
     # ── 阶段 1：采集数据（浅层侦察） ──
-    print("\n═══ 阶段 1/3：浅层情报侦察 ═══")
+    print("\n═══ 阶段 1/4：浅层情报侦察 ═══")
     github_data = fetch_github_trending()
     hn_data = fetch_hackernews()
     awesome_data = fetch_awesome_updates()
+    reddit_data = fetch_reddit_ml()
+    arxiv_data = fetch_arxiv_papers()
 
     # ── 阶段 1.5：生成每日简报 ──
-    digest_md = generate_digest(github_data, hn_data, awesome_data)
+    digest_md = generate_digest(github_data, hn_data, awesome_data, reddit_data, arxiv_data)
     with open(DIGEST_FILE, 'w', encoding='utf-8') as f:
         f.write(digest_md)
     print(f"📋 每日简报已生成: {DIGEST_FILE}")
@@ -766,19 +894,24 @@ def main():
             print(f"  🃏 浅层技能卡: {os.path.basename(card_path)}")
 
     # ── 阶段 2：深度学习（V2.0 核心） ──
-    print("\n═══ 阶段 2/3：深度学习解析 ═══")
+    print("\n═══ 阶段 2/4：深度学习解析 ═══")
     deep_threshold = 5000  # Stars > 5000 的仓库才值得深度解析
     deep_candidates = [r for r in github_data if r.get('stars', 0) > deep_threshold]
     deep_cards = 0
+    REFRESH_DAYS = 7  # 已有深度卡超过 7 天则重新解析
 
-    for repo in deep_candidates[:3]:  # 每次最多深度学习 3 个（节省 API 配额）
+    for repo in deep_candidates[:3]:
         safe_name = repo['name'].split('/')[-1].replace(' ', '_').replace('.', '_').lower()
         deep_card_path = os.path.join(SKILLS_DIR, f"deep-{safe_name}.agskill.md")
 
-        # 避免重复深度学习（已有深度卡则跳过）
+        # 周期性刷新：已有深度卡但超过 REFRESH_DAYS 则重新解析
         if os.path.exists(deep_card_path):
-            print(f"  ⏭️  跳过 {safe_name}（已有深度技能卡）")
-            continue
+            age_days = (time.time() - os.path.getmtime(deep_card_path)) / 86400
+            if age_days < REFRESH_DAYS:
+                print(f"  ⏭️  跳过 {safe_name}（深度卡 {age_days:.0f} 天前更新，{REFRESH_DAYS}天内免刷新）")
+                continue
+            else:
+                print(f"  🔄 {safe_name} 深度卡已过期（{age_days:.0f}天），重新解析...")
 
         try:
             analysis = deep_analyze_repo(repo)
@@ -793,9 +926,10 @@ def main():
         time.sleep(1)  # API 限速间隔
 
     # ── 阶段 3：汇总报告 ──
-    print("\n═══ 阶段 3/3：汇总与验证 ═══")
+    print("\n═══ 阶段 3/4：汇总与验证 ═══")
     elapsed = time.time() - start
     print(f"   GitHub: {len(github_data)} 条 | HN: {len(hn_data)} 条 | Awesome: {len(awesome_data)} 条")
+    print(f"   Reddit: {len(reddit_data)} 条 | arXiv: {len(arxiv_data)} 篇")
     print(f"   浅层技能卡: {shallow_cards} 张 | 深度技能卡: {deep_cards} 张")
     print(f"   总耗时: {elapsed:.1f}s")
 
