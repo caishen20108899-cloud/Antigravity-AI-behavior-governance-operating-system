@@ -38,10 +38,10 @@ metadata:
    - 当工单 `#001` 下的 `@工信部` 完成其代码推送后，必须它自己进入清单将其改为 `[Done]`，然后通知并指配下一个衔接者：
      `[Issue-#002] | 指派: [@安全部/QA] | 状态: [In-Progress] | 依赖: Issue-#001`
 
-3. **Archon-Gate 物理验收与打回重做 (Audit Protocol)**
+3. **Archon-Gate 物理验收与打回重做 (Audit Protocol & Definition of Done)**
    - 代码执行兵种 (@Backend/@Frontend 等) 在移交或闭环工单前，**严禁用“肉眼评估”作为完成标准**。
    - 必须通过 `@DevOps` 或触发远端验证网关（例如使用项目的 `ag_remote_verify.sh` 或自身终端的物理编译测试）进行跨环境验收。
-   - 体检绿灯通过 (Exit Code 0)：工单才可标记为 `[Done]` 并走完流程。
+   - **唯一结案凭证 (DoD)**：工单在被标记为 `[Done]` 时，必须在工单状态侧或日志输出中附带物理验证成功的终端日志片段或 Exit Code 为 0 的铁证。没有凭证的 `[Done]` 均视为欺诈，强制作废。
    - 体检爆红，抛出错：强制退回 `状态: [In-Progress]`，并交还给原执行智能体立即按报错日志改写重试，直到打通为止！
 
 4. **阻断防死循环红线 (Blocker Reporting Protocol)**
