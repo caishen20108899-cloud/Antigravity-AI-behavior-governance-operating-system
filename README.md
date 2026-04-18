@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/版本-V3.3.1_Archon--Gate-blueviolet?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/版本-V3.4.0_Gstack--Fusion-blueviolet?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/依赖-零外部依赖-success?style=for-the-badge" />
   <img src="https://img.shields.io/badge/License-Private-red?style=for-the-badge" />
@@ -11,18 +11,18 @@
 
 Antigravity 不是一个 IDE，也不是一个 Agent 框架。它是一套刻入大模型底层血液的 **行为准则 + 工具链 + 实时可视化大盘** 三位一体架构，目标是让每一个被唤醒的 AI 在任何项目中都具备：
 
-- 🧠 **跨会话永久记忆** — 对话结束不丢失，项目间严格隔离
-- 🎖️ **多兵种协同作战** — 7 角色标准池，3 级编制自动适配
-- 🛡️ **代码质量物理门禁** — Archon-Gate 4 层洋葱中间件拦截
-- 📡 **实时指挥官观盘** — War Room 大屏 + 跨窗口神经元终端
-- 🌐 **社区自进化** — 每日自动从全球开发者社区吸收新知识
+- 🧠 **跨会话永久记忆** — 对话结束不丢失，自动记忆校准，项目间严格隔离
+- 🎖️ **Gstack 审查军团** — 三路并行测试审查，3-Strike 防线熔断机制
+- 🛡️ **双向品控物理门禁** — Exit Code=0 真实编译拦截 + 源码/审美强效排异
+- 📡 **实时真全视图大盘** — War Room 大屏 + 跨窗口神经元实况日志转播
+- 🌐 **社区与框架进化** — 每日抓取全球极客情报，自动沉淀为全架构特种突触卡
 
 ---
 
 ## 📐 系统架构
 
-```
-┌─────────────────────── Antigravity V3.3.1 ───────────────────────┐
+```text
+┌────────────────────── Antigravity V3.4.0 Gstack ──────────────────────┐
 │                                                                 │
 │  📜 GEMINI.md (11条铁律宪法)         ← AI 行为的最高法律        │
 │                                                                 │
@@ -80,9 +80,9 @@ Antigravity 不是一个 IDE，也不是一个 Agent 框架。它是一套刻入
 | 层 | 名称 | 职责 |
 |----|------|------|
 | 1 | `ContextHealthMiddleware` | 评估上下文负荷，触发心理压缩 |
-| 2 | `AutoMemoryMiddleware` | 异步捕获关键经验并后台归档 |
-| 3 | `SurgicalCheckMiddleware` | 加载 Karpathy 四铁律，确保最小爆炸半径 |
-| 4 | `ValidationGateMiddleware` | Archon 物理门禁：运行 `go test` / `npm build` 确认代码正确 |
+| 2 | `AutoMemoryMiddleware` | 异步捕获坑点并自动生成 JSONL 校准库，随次数调整置信度 |
+| 3 | `SurgicalCheckMiddleware` | **军法处**：强接 `git diff` 引擎，若修改范围越界直接掐断执行 |
+| 4 | `ValidationGateMiddleware` | **断头台**：全自动嗅探运行物理校验 (`npm test`/`go test`)，Exit Code ≠ 0 必定回炉。<br>连续 3 次失败触发 **3-Strike 熔断** |
 
 ### 2. 代码图谱引擎 (`ag_core/ag_indexer.py`)
 
@@ -154,6 +154,22 @@ sh ag_log "@Commander" "MessageStatus" "正在突破网关安全逻辑..."
 ```bash
 sh start_dashboard.sh
 ```
+
+---
+
+### 6. Gstack 审查军团 (Review Army & Fix-First)
+
+彻底告别单体 AI 的粗心与自我脑补，融合 Gstack 式深水作业标准：
+- **并行专家兵装**: 将复杂需求及大 PR 打散分发给 Testing (测试扫描) / Security (安全阻击) / Consistency (合规纠察) 进行并行独立审查，UUID 去重并生成真正的漏洞报告。
+- **覆盖率看门狗**: 拒绝加插桩的臃肿，通过原生 Python AST 拆解出代码，以 **ASCII 地图格式** 标注裸露未覆盖的节点。
+- **Fix-First 漏斗分诊**: 问题一旦确认，强制经过三分法门廊：`[AUTO-FIX]`（机械问题直接斩杀补全）、`[ASK]`（重要分支强迫人类回答）、`[INFO]`（建议）。不拖泥带水。
+
+### 7. 双向品控防线与兵棋推演
+
+彻底解决 AI 的死板、低容错和“硅基风味”。
+- **无声跨平台防护 (`script-dx.agskill.md`)**: 强制所有部署/运维脚本必须自检环境（如判定自身在 Mac_mini 还是 MacBook 跑），封杀粗暴报错，追求 `<2分钟` 的 TTHW。
+- **极客美学清洗 (`design-audit.agskill.md`)**: 对前端注入 **好感度蓄水池 (Goodwill)** 概念。彻底屏蔽 AI 惯用的艳俗圆角、厚重阴影和廉价紫色渐变，以 Apple/Vercel 原生冷峻高级质感作为 UI 准入门槛。
+- **实景战场操控仪 (`browser-ops.agskill.md`)**: 前端回归不再靠“瞎看”，驱动底层 `browser_subagent` 时必须执行 DOM Snap 快照并带有明确 TaskName 定位输出，结案自带 🎥 WebP 实景冲浪视频。
 
 ---
 
@@ -274,7 +290,7 @@ sh ag_log "@Commander" "MessageStatus" "系统已就绪"
 | 安全红线 | 6/10 | 5/10 | **9/10** ★ |
 | 硬件拓扑感知 | 3/10 | 2/10 | **8/10** ★ |
 | 代码索引/RAG | **9/10** | 8/10 | 7/10 |
-| 多智能体协作 | 8/10 | 3/10 | 7/10 |
+| 多智能体协作 | 8/10 | 3/10 | **10/10** ★ |
 
 > **定位**: Cursor 解决"怎么写代码"，Antigravity 解决"怎么让 AI 为你安全、可控、有记忆地工作"。
 
@@ -321,10 +337,10 @@ sh ag_log "@Commander" "MessageStatus" "系统已就绪"
 - [x] V3.1 — 多智能体协作框架 + War Room 大盘
 - [x] V3.2 — Archon-Gate 中间件 + 神经元发报 + 11条铁律
 - [x] V3.3 — 代码图谱引擎 + 社区自进化 + 深度学习技能卡
-- [x] V3.3.1 — 核心引擎漏洞净化 (ag_log json逃逸防护 / Archon-Gate 精准校验)
-- [ ] V3.4 — MCP 协议接入 (让任何 IDE 调用 Antigravity 记忆)
-- [ ] V3.5 — 基于 Neo4j 的项目知识图谱
-- [ ] V4.0 — 真并行 Agent 隔离 (Docker 容器级)
+- [x] V3.4 — 🧬 Gstack 基因融合 (实体物理验证闭环 / 审美与脚本双向品控 / Review Army 矩阵)
+- [ ] V3.5 — MCP 协议编织 (让任何 IDE 或 Agent 无缝受控于 Antigravity 记忆核心)
+- [ ] V3.6 — 基于 Neo4j 的星系级项目知识图谱
+- [ ] V4.0 — 真并行 Agent 军团隔离网 (基于轻量容器层)
 
 ---
 
