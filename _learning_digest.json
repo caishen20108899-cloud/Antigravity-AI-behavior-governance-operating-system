@@ -1,6 +1,14 @@
 {
-  "date": "2026-04-15",
+  "date": "2026-04-18",
   "new_skills": [
+    {
+      "name": "System-prompts-and-models-of-ai-tools",
+      "desc": "完整增强代码、克劳德代码、Cluely、CodeBuddy、Comet、Cursor、Devin AI、Junie、Kiro、Leap.new、L"
+    },
+    {
+      "name": "Langchain",
+      "desc": "代理工程平台"
+    },
     {
       "name": "Langflow",
       "desc": "Langflow 是一个强大的工具，用于构建和部署人工智能驱动的代理和工作流程。"
@@ -12,49 +20,9 @@
     {
       "name": "Dify",
       "desc": "用于代理工作流程开发的生产就绪平台。"
-    },
-    {
-      "name": "Awesome-llm-apps",
-      "desc": "使用 OpenAI、Anthropic、Gemini 和开源的具有 AI 代理和 RAG 的出色 LLM 应用程序集合"
-    },
-    {
-      "name": "Langchain",
-      "desc": "代理工程平台"
-    },
-    {
-      "name": "Firecrawl",
-      "desc": "🔥 AI 的 Web 数据 API - 使用干净的 Web 数据为 AI 代理提供支持"
-    },
-    {
-      "name": "Deep-langchain",
-      "desc": "代理工程平台"
-    },
-    {
-      "name": "Deep-firecrawl",
-      "desc": "🔥 AI 的 Web 数据 API - 使用干净的 Web 数据为 AI 代理提供支持"
-    },
-    {
-      "name": "Deep-langflow",
-      "desc": "Langflow 是一个强大的工具，用于构建和部署人工智能驱动的代理和工作流程。"
-    },
-    {
-      "name": "Deep-dify",
-      "desc": "用于代理工作流程开发的生产就绪平台。"
-    },
-    {
-      "name": "Deep-javaguide",
-      "desc": "Java面试和远程通用面试指南，覆盖计算机基础、数据库、高并发、系统设计与AI应用开发"
     }
   ],
   "updated_memories": [
-    {
-      "project": "TG-BUG-Collector",
-      "desc": "过去 48 小时内更新了 TG-BUG-Collector 项目逻辑库"
-    },
-    {
-      "project": "日常问题",
-      "desc": "过去 48 小时内更新了 日常问题 项目逻辑库"
-    },
     {
       "project": "ChiChatIM系统",
       "desc": "过去 48 小时内更新了 ChiChatIM系统 项目逻辑库"

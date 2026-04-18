@@ -9,7 +9,11 @@
 | 🎯 Target Triggers (触发条件 / 匹配关键词) | 📂 目标挂载点 (Skill File) | ⚙️ 效能简述 (Description) |
 |---|---|---|
 | `创建项目`, `协同`, `多部门`, `新建协作`, `分配工单` | [ag-team-issue-protocol.agskill.md](./ag-team-issue-protocol.agskill.md) | 采用 Multica 抽离提取的工单 Issue 协同和 Blocker 卡点机制。 |
-| `重构代码`, `修改核心逻辑`, `增加新功能`, `大规模改动`, `深入排查` | [surgical-code-repair.agskill.md](./surgical-code-repair.agskill.md) | 基于 Karpathy 法则构建的“无污染、零过度设计”代码手术级操作规范。 |
+| `重构代码`, `修改核心逻辑`, `增加新功能`, `大规模改动`, `深入排查`, `修bug` | [surgical-code-repair.agskill.md](./surgical-code-repair.agskill.md) | **v3.0 操作手册**：Karpathy 铁律 + gstack 操作手册模式的六步分步代码手术规范（侦查→根因→方案→执行→物理验证→结案）。 |
+| `code review`, `审查代码`, `修复bug`, `检查质量`, `提交前审查` | [fix-first-triage.agskill.md](./fix-first-triage.agskill.md) | **v1.0 新增**：gstack Fix-First 三分类审查法（AUTO-FIX/ASK/INFO），含置信度门控和校准学习。 |
+| `网页`, `浏览器`, `录屏`, `UI测试`, `截图`, `访问` | [browser-ops.agskill.md](./browser-ops.agskill.md) | **v1.0 新增**：Playbook 规范指南，安全、精准驱动 browser_subagent 进行 UI 端到端验证与录制。 |
+| `前端设计`, `好感度`, `排版`, `UI改善`, `CSS审查` | [design-audit.agskill.md](./design-audit.agskill.md) | **v1.0 新增**：高规格前端 UI 审查卡，含好感度蓄水池(Goodwill)及 AI Slop 审美剔除框架。 |
+| `生成脚本`, `.sh`, `.bat`, `安装程序`, `部署`, `一键安装` | [script-dx.agskill.md](./script-dx.agskill.md) | **v1.0 新增**：极致脚本工效学约束，强制脚本满足 TTHW 并在无声处报错保护。 |
 | `创建新技能`, `新增维保 SOP`, `标准化技能卡片` | [template.agskill.md](./template.agskill.md) | 新增/编写自定义 agskill 的官方 v2.0 模板指南。 |
 | `langchain`, `ai`, `ai-agents` | [deep-langchain.agskill.md](./deep-langchain.agskill.md) | 深度技能实战卡：针对 Langchain 的核心挂载 API 库 (V2.0自动进化) |
 | `dify`, `agentic-workflow` | [deep-dify.agskill.md](./deep-dify.agskill.md) | 深度技能实战卡：针对 Dify 工作流的系统核心编排代码 (V2.0自动进化) |

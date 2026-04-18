@@ -1,58 +1,58 @@
-# 🌐 社区情报简报 (2026-04-15)
+# 🌐 社区情报简报 (2026-04-18)
 > 自动生成 by `ag_evolve` | Antigravity V3.3
 > ⚠️ 此文件每日自动更新，请勿手动编辑
 
 ## 🔥 GitHub 热门 (AI/Agent 领域)
 
-1. **[Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide)** ⭐ 154,978 [Java]
+1. **[Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide)** ⭐ 155,042 [Java]
    Java面试&远程通用面试指南，覆盖计算机基础、数据库、全局、高并发、系统设计与AI应用开发
    `agent` `context-engineering` `interview` `java` `jvm`
 
-2. **[langflow-ai/langflow](https://github.com/langflow-ai/langflow)** ⭐ 146,982 [Python]
+2. **[langflow-ai/langflow](https://github.com/langflow-ai/langflow)** ⭐ 147,078 [Python]
    Langflow 是一个强大的工具，用于构建和部署人工智能驱动的代理和工作流程。
    `agents` `chatgpt` `generative-ai` `large-language-models` `multiagent`
 
-3. **[langgenius/dify](https://github.com/langgenius/dify)** ⭐ 137,885 [TypeScript]
+3. **[langgenius/dify](https://github.com/langgenius/dify)** ⭐ 138,233 [TypeScript]
    用于代理工作流程开发的生产就绪平台。
    `agent` `agentic-ai` `agentic-framework` `agentic-workflow` `ai`
 
-4. **[langchain-ai/langchain](https://github.com/langchain-ai/langchain)** ⭐ 133,671 [Python]
+4. **[x1xhlol/system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)** ⭐ 135,459 
+   完整增强代码、克劳德代码、Cluely、CodeBuddy、Comet、Cursor、Devin AI、Junie、Kiro、Leap.new、L
+   `ai` `bolt` `cluely` `copilot` `cursor`
+
+5. **[langchain-ai/langchain](https://github.com/langchain-ai/langchain)** ⭐ 133,951 [Python]
    代理工程平台
    `agents` `ai` `ai-agents` `anthropic` `chatgpt`
 
-5. **[Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)** ⭐ 105,697 [Python]
-   使用 OpenAI、Anthropic、Gemini 和开源的具有 AI 代理和 RAG 的出色 LLM 应用程序集合
+6. **[Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)** ⭐ 106,228 [Python]
+   您可以实际运行 100 多个 AI Agent 和 RAG 应用程序 — 克隆、自定义、发布。
    `agents` `llms` `python` `rag`
 
-6. **[google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)** ⭐ 101,341 [TypeScript]
+7. **[google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)** ⭐ 101,665 [TypeScript]
    一款开源 AI 代理，可将 Gemini 的强大功能直接带入您的终端。
    `ai` `ai-agents` `cli` `gemini` `gemini-api`
 
-7. **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)** ⭐ 88,975 [Python]
+8. **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)** ⭐ 98,530 [Python]
    与您共同成长的代理商
    `ai` `ai-agent` `ai-agents` `anthropic` `chatgpt`
 
-8. **[browser-use/browser-use](https://github.com/browser-use/browser-use)** ⭐ 87,960 [Python]
+9. **[browser-use/browser-use](https://github.com/browser-use/browser-use)** ⭐ 88,392 [Python]
    🌐 让 AI 代理可以访问网站。轻松在线自动化任务。
    `ai-agents` `ai-tools` `browser-automation` `browser-use` `llm`
 
-9. **[msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)** ⭐ 80,308 [Shell]
+10. **[msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)** ⭐ 82,313 [Shell]
    触手可及的完整人工智能机构 - 从前端向导到 Reddit 社区忍者，从wh
-
-10. **[infiniflow/ragflow](https://github.com/infiniflow/ragflow)** ⭐ 78,160 [Python]
-   RAGFlow 是一款领先的开源检索增强生成 (RAG) 引擎，融合了尖端技术
-   `agent` `agentic` `agentic-ai` `agentic-workflow` `ai`
 
 ## 📰 Hacker News 精选 (AI 相关)
 
-- [Show HN：Libretto – 使 AI 浏览器自动化具有确定性](https://github.com/saffron-health/libretto) △24 💬4 ([讨论](https://news.ycombinator.com/item?id=47780971))
-- [修复因椅子静电而导致显示器黑屏、关闭或闪烁的问题](https://aalonso.dev/blog/2023/how-to-fix-monitor-that-goes-black-off-due-to-static-electricity-in-chair/) △9 💬10 ([讨论](https://news.ycombinator.com/item?id=47738081))
-- [双子座机器人-ER 1.6](https://deepmind.google/blog/gemini-robotics-er-1-6/) △141 💬41 ([讨论](https://news.ycombinator.com/item?id=47779094))
-- [CPU 并没有死。 Gemma2B 在测试中击败了 GPT-3.5 Turbo，使其声名鹊起](https://seqpu.com/CPUsArentDead/) △5  ([讨论](https://news.ycombinator.com/item?id=47781998))
-- [Pretty Fish：更好的美人鱼图编辑器](https://pretty.fish/) △88 💬19 ([讨论](https://news.ycombinator.com/item?id=47708627))
-- [Google Gemma 4 在 iPhone 上本地运行，具有完全离线的 AI 推理功能](https://www.gizmoweek.com/gemma-4-runs-iphone/) △220 💬150 ([讨论](https://news.ycombinator.com/item?id=47774971))
-- [研究：回归基础的方法在语言分析方面可以匹配或超越人工智能](https://www.manchester.ac.uk/about/news/back-to-basics-approach-can-match-or-outperform-ai/) △27 💬10 ([讨论](https://news.ycombinator.com/item?id=47778050))
-- [AI裁决引发美国律师警告：你的聊天记录可能会被用来对付你](https://www.reuters.com/legal/government/ai-ruling-prompts-warnings-us-lawyers-your-chats-could-be-used-against-you-2026-04-15/) △107 💬65 ([讨论](https://news.ycombinator.com/item?id=47778308))
+- [为什么日本有这么好的铁路](https://worksinprogress.co/issue/why-japan-has-such-good-railways/) △61 💬48 ([讨论](https://news.ycombinator.com/item?id=47815395))
+- [克劳德设计](https://www.anthropic.com/news/claude-design-anthropic-labs) △1101 💬721 ([讨论](https://news.ycombinator.com/item?id=47806725))
+- [测量 Claude 4.7 的标记器成本](https://www.claudecodecamp.com/p/i-measured-claude-4-7-s-new-tokenizer-here-s-what-it-costs-you) △641 💬454 ([讨论](https://news.ycombinator.com/item?id=47807006))
+- [AI代理的成本是否也在呈指数级上升？ (2025)](https://www.tobyord.com/writing/hourly-costs-for-ai-agents) △248 💬88 ([讨论](https://news.ycombinator.com/item?id=47778922))
+- [显示 HN：Sfsym – 将 Apple SF 符号导出为矢量 SVG/PDF/PNG](https://github.com/yapstudios/sfsym) △18 💬6 ([讨论](https://news.ycombinator.com/item?id=47812964))
+- [Healthchecks.io 现在使用自托管对象存储](https://blog.healthchecks.io/2026/04/healthchecks-io-now-uses-self-hosted-object-storage/) △173 💬69 ([讨论](https://news.ycombinator.com/item?id=47806348))
+- [平均水平就是你所需要的](https://rawquery.dev/blog/average-is-all-you-need) △104 💬96 ([讨论](https://news.ycombinator.com/item?id=47754603))
+- [用于寻找最佳策略的纸牌模拟器：当前记录为 8.590%](https://github.com/dacracot/Klondike3-Simulator) △49 💬25 ([讨论](https://news.ycombinator.com/item?id=47801639))
 
 ## 📚 Awesome 列表动态
 
@@ -61,50 +61,51 @@
 - **e2b-dev/awesome-ai-agents** (2025-01-08): update README.md - fix typo line 1128
 
 this wasn't needed im sorry
-- **Jenqyang/awesome-ai-agents** (2026-04-10): Add Uni-CLI to Tools section (#154)
-- **Jenqyang/awesome-ai-agents** (2026-04-10): Add Agent Brain to Tools section (#152)
+- **Jenqyang/awesome-ai-agents** (2026-04-16): Add agent-express to Frameworks section (#175)
 
-Co-authored-by: kaderosio <info@kaderos.io>
-- **Jenqyang/awesome-ai-agents** (2026-04-10): Add selectools to Frameworks (#151)
+Co-authored-by: kvikuz <vvkuz@yandex-team.ru>
+- **Jenqyang/awesome-ai-agents** (2026-04-16): Add Corellis — multi-agent governance framework (#172)
+- **Jenqyang/awesome-ai-agents** (2026-04-16): Add 8bitconcepts Research to Related > Blog (#170)
+
+Co-authored-by: unitedideas <hello@8bitconcepts.com>
 
 ## 🔴 Reddit /r/MachineLearning (热门)
 
-- [正在看一篇 ICLR 2025 Oral 论文，我很惊讶它竟然被口头发表了 [D]](https://www.reddit.com/r/MachineLearning/comments/1slxqac/was_looking_at_a_iclr_2025_oral_paper_and_i_am/) △57 💬17 [Discussion] ([讨论](https://reddit.com/r/MachineLearning/comments/1slxqac/was_looking_at_a_iclr_2025_oral_paper_and_i_am/))
-- [可以将模型分解为图数据库[N]](https://www.reddit.com/r/MachineLearning/comments/1slmfmw/you_can_decompose_models_into_a_graph_database_n/) △45 💬20 [News] ([讨论](https://reddit.com/r/MachineLearning/comments/1slmfmw/you_can_decompose_models_into_a_graph_database_n/))
-- [ICML 的 AC 指南是什么？ （或者：ICML qq帖）[D]](https://www.reddit.com/r/MachineLearning/comments/1sl9zza/what_is_the_ac_guidance_for_icml_or_icml_qq/) △27 💬29 [Discussion] ([讨论](https://reddit.com/r/MachineLearning/comments/1sl9zza/what_is_the_ac_guidance_for_icml_or_icml_qq/))
-- [“我不知道！”：教导神经网络放弃光环损失。 [R]](https://www.reddit.com/r/MachineLearning/comments/1skzuhd/i_dont_know_teaching_neural_networks_to_abstain/) △72 💬26 [Research] ([讨论](https://reddit.com/r/MachineLearning/comments/1skzuhd/i_dont_know_teaching_neural_networks_to_abstain/))
-- [我从头开始将纯尖峰神经网络 (SNN) 缩放至 1.088B 参数。预算用完了，但这是我发现的 [R]](https://www.reddit.com/r/MachineLearning/comments/1skql34/i_scaled_a_pure_spiking_neural_network_snn_to/) △131 💬53 [Research] ([讨论](https://reddit.com/r/MachineLearning/comments/1skql34/i_scaled_a_pure_spiking_neural_network_snn_to/))
+- [零样本世界模型是发展高效的学习者 [R]](https://i.redd.it/px240r8jkuvg1.png) △98 💬24 [Research] ([讨论](https://reddit.com/r/MachineLearning/comments/1soj65c/zeroshot_world_models_are_developmentally/))
+- [未能复制现代纸质声明 [D]](https://www.reddit.com/r/MachineLearning/comments/1sml5fo/failure_to_reproduce_modern_paper_claims_d/) △179 💬48 [Discussion] ([讨论](https://reddit.com/r/MachineLearning/comments/1sml5fo/failure_to_reproduce_modern_paper_claims_d/))
+- [[ICML 2026] 分数先升后降！！ [D]](https://www.reddit.com/r/MachineLearning/comments/1smv0rq/icml_2026_scores_increased_and_then_decreased_d/) △45 💬26 [Discussion] ([讨论](https://reddit.com/r/MachineLearning/comments/1smv0rq/icml_2026_scores_increased_and_then_decreased_d/))
+- [为法学硕士建立了政治基准。 KIMI K2 无法回答有关台湾的问题（显然）。当给予选择退出时，GPT-5.3 会拒绝 100% 的问题。 [P]](https://www.reddit.com/r/MachineLearning/comments/1smqsbu/built_an_political_benchmark_for_llms_kimi_k2/) △23 💬21 [Project] ([讨论](https://reddit.com/r/MachineLearning/comments/1smqsbu/built_an_political_benchmark_for_llms_kimi_k2/))
 
 ## 📄 arXiv 最新 AI 论文
 
-- **[SceneCritic：3D 室内场景合成的符号评估器](http://arxiv.org/abs/2604.13035v1)** (2026-04-14)
-  大型语言模型 (LLM) 和视觉语言模型 (VLM) 越来越多地通过布局和场景图等中间结构生成室内场景，但评估仍然依赖于 LLM
+- **[MM-WebAgent：用于网页生成的分层多模式 Web 代理](http://arxiv.org/abs/2604.15309v1)** (2026-04-16)
+  人工智能生成内容（AIGC）工具的快速发展使得可以根据网页设计的需求创建图像、视频和可视化，为网页设计提供了灵活且日益增长的内容。
 
-- **[通过 Rubric 奖励进行视觉偏好优化](http://arxiv.org/abs/2604.13029v1)** (2026-04-14)
-  直接偏好优化 (DPO) 的有效性取决于反映多模式任务中重要的质量差异的偏好数据。现有的管道通常依赖于离策略p
+- **[LLM 问题解决的泛化：最短路径的案例](http://arxiv.org/abs/2604.15306v1)** (2026-04-16)
+  语言模型是否可以系统地泛化仍然存在激烈争论。然而，经验表现是由训练数据、训练范式和推理等多种因素共同决定的
 
-- **[迈向机器学习研究的自主远景工程](http://arxiv.org/abs/2604.13018v1)** (2026-04-14)
-  自主人工智能研究进展迅速，但长期的机器学习研究工程仍然很困难：智能体必须在任务理解、环境设置、实施方面保持连贯的进展。
+- **[诊断法学硕士法官的可靠性：保形预测集和传递性违规](http://arxiv.org/abs/2604.15302v1)** (2026-04-16)
+  LLM 作为法官的框架越来越多地用于自动 NLG 评估，但它们的每个实例的可靠性仍然知之甚少。我们提出了适用于 SummEva 的双管齐下的诊断工具包
 
-- **[Lightning OPD：通过离线按策略蒸馏对大型推理模型进行高效的后训练](http://arxiv.org/abs/2604.13010v1)** (2026-04-14)
-  在策略蒸馏（OPD）已成为大型语言模型的有效后训练范例。然而，标准 OPD 需要在整个训练过程中使用实时教师推理服务器，从而导致
+- **[LLM 和 VLM 如何理解没有远见的视点旋转？可解释性研究](http://arxiv.org/abs/2604.15294v1)** (2026-04-16)
+  在过去的一年里，空间智能越来越受到人们的关注。许多先前的作品从视觉空间智能的角度进行研究，其中模型可以访问视觉空间信息
 
-- **[离崩溃还有一步之遥：根据指令调整的帮助的脆弱性](http://arxiv.org/abs/2604.13006v1)** (2026-04-14)
-  经过指令调整的大型语言模型会产生有用的、结构化的响应，但是当受到轻微约束时，这种有用性有多强大？我们展示了简单的词汇约束（禁止单个
+- **[Prism：张量程序的符号超级优化](http://arxiv.org/abs/2604.15272v1)** (2026-04-16)
+  本文介绍了 Prism，第一个张量程序的符号超级优化器。关键思想是 sGraph，一种符号化的分层表示形式，可以对大类张量程序进行紧凑编码
 
-- **[PolicyLLM：实现对大型语言模型公共政策的卓越理解](http://arxiv.org/abs/2604.12995v1)** (2026-04-14)
-  大型语言模型（LLM）越来越多地融入现实世界的决策中，包括公共政策领域。然而，他们理解和推理与政策相关的问题的能力
+- **[CoopEval：社会困境中合作维持机制和法学硕士代理人的基准测试](http://arxiv.org/abs/2604.15267v1)** (2026-04-16)
+  LLM 智能体与其他追求目标的智能体有效且安全地交互变得越来越重要，然而，最近的研究报告了相反的趋势：具有更强推理能力的 LLM
 
-- **[LogicEval：评估现实软件中逻辑漏洞自动修复技术的系统框架](http://arxiv.org/abs/2604.12994v1)** (2026-04-14)
-  软件中的逻辑漏洞源于程序逻辑缺陷而不是内存安全，这可能导致严重的安全故障。尽管现有的自动化程序修复技术初步
+- **[从令牌到步骤：用于高效多步骤推理的验证感知推测解码](http://arxiv.org/abs/2604.15244v1)** (2026-04-16)
+  推测解码 (SD) 通过允许轻量级草稿模型提出由更强大的目标模型验证的输出来加速大型语言模型推理。然而，其以代币为中心的性质
 
-- **[视差：为什么会思考的人工智能代理绝不能采取行动](http://arxiv.org/abs/2604.12986v1)** (2026-04-14)
-  自主人工智能代理正在迅速从实验工具过渡到运营基础设施，预计到 2026 年底，80% 的企业应用程序将嵌入人工智能副驾驶。
+- **[代理微观物理：生成人工智能安全宣言](http://arxiv.org/abs/2604.15236v1)** (2026-04-16)
+  本文提出了代理人工智能安全研究的方法论建议。随着系统获得规划、记忆、工具使用、持久身份和持续交互，安全性不再是问题
 
 
 ## 🎯 建议关注
 
-> 发现 **[Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide)** (⭐154,978) 值得深入研究，可能对 Antigravity 工作流有帮助。
+> 发现 **[Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide)** (⭐155,042) 值得深入研究，可能对 Antigravity 工作流有帮助。
 
 ---
-*由 ag_evolve V1.0 生成 | 扫描时间: 2026-04-15 23:31 UTC*
+*由 ag_evolve V1.0 生成 | 扫描时间: 2026-04-18 20:01 UTC*
