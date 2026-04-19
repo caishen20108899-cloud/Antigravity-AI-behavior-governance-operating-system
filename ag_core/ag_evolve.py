@@ -884,15 +884,40 @@ def main():
     # ── 阶段 1.5：生成浅层趋势技能卡（保持向后兼容） ──
     date_prefix = datetime.now().strftime('%Y-%m-%d')
     shallow_cards = 0
+    skipped_dedup = 0
     high_value = [r for r in github_data if r.get('stars', 0) > 1000]
     for repo in high_value[:5]:
         safe_name, card_content = generate_skill_card(repo)
         card_path = os.path.join(TRENDING_DIR, f"{date_prefix}_{safe_name}.agskill.md")
         if not os.path.exists(card_path):
-            with open(card_path, 'w', encoding='utf-8') as f:
-                f.write(card_content)
-            shallow_cards += 1
-            print(f"  🃏 浅层技能卡: {os.path.basename(card_path)}")
+            # 内容级去重：检查是否存在前几天的同名卡且内容相同
+            existing_duplicate = False
+            for existing_file in os.listdir(TRENDING_DIR):
+                if existing_file.endswith(f"_{safe_name}.agskill.md") and existing_file != os.path.basename(card_path):
+                    existing_path = os.path.join(TRENDING_DIR, existing_file)
+                    try:
+                        with open(existing_path, 'r', encoding='utf-8') as ef:
+                            old_content = ef.read()
+                        # 比较时忽略日期行（discovered 字段和生成日期行），只比核心内容
+                        old_core = re.sub(r'discovered:.*', '', old_content)
+                        new_core = re.sub(r'discovered:.*', '', card_content)
+                        old_core = re.sub(r'\d{4}-\d{2}-\d{2}', '', old_core)
+                        new_core = re.sub(r'\d{4}-\d{2}-\d{2}', '', new_core)
+                        if old_core.strip() == new_core.strip():
+                            existing_duplicate = True
+                            break
+                    except Exception:
+                        pass
+            if existing_duplicate:
+                skipped_dedup += 1
+                print(f"  ⏭️  跳过 {safe_name}（内容与历史卡完全一致，无需重复生成）")
+            else:
+                with open(card_path, 'w', encoding='utf-8') as f:
+                    f.write(card_content)
+                shallow_cards += 1
+                print(f"  🃏 浅层技能卡: {os.path.basename(card_path)}")
+    if skipped_dedup > 0:
+        print(f"  📊 内容去重: 跳过 {skipped_dedup} 张重复卡片")
 
     # ── 阶段 2：深度学习（V2.0 核心） ──
     print("\n═══ 阶段 2/4：深度学习解析 ═══")

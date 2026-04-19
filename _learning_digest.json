@@ -1,5 +1,5 @@
 {
-  "date": "2026-04-18",
+  "date": "2026-04-19",
   "new_skills": [
     {
       "name": "System-prompts-and-models-of-ai-tools",
@@ -20,12 +20,32 @@
     {
       "name": "Dify",
       "desc": "用于代理工作流程开发的生产就绪平台。"
+    },
+    {
+      "name": "Design-audit",
+      "desc": "新增技能特性"
+    },
+    {
+      "name": "Browser-ops",
+      "desc": "新增技能特性"
+    },
+    {
+      "name": "Surgical-code-repair",
+      "desc": "新增技能特性"
+    },
+    {
+      "name": "Script-dx",
+      "desc": "新增技能特性"
+    },
+    {
+      "name": "Fix-first-triage",
+      "desc": "新增技能特性"
     }
   ],
   "updated_memories": [
     {
-      "project": "ChiChatIM系统",
-      "desc": "过去 48 小时内更新了 ChiChatIM系统 项目逻辑库"
+      "project": "EAMProTrial9.6396",
+      "desc": "过去 48 小时内更新了 EAMProTrial9.6396 项目逻辑库"
     }
   ]
 }
