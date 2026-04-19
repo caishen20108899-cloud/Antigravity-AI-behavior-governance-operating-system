@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/版本-V3.4.0_Gstack--Fusion-blueviolet?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/版本-V3.5.0_Execution--Discipline-blueviolet?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/依赖-零外部依赖-success?style=for-the-badge" />
   <img src="https://img.shields.io/badge/License-Private-red?style=for-the-badge" />
@@ -22,7 +22,7 @@ Antigravity 不是一个 IDE，也不是一个 Agent 框架。它是一套刻入
 ## 📐 系统架构
 
 ```text
-┌────────────────────── Antigravity V3.4.0 Gstack ──────────────────────┐
+┌────────────────────── Antigravity V3.5.0 ExecDiscipline ───────────────┐
 │                                                                 │
 │  📜 GEMINI.md (11条铁律宪法)         ← AI 行为的最高法律        │
 │                                                                 │
@@ -33,6 +33,7 @@ Antigravity 不是一个 IDE，也不是一个 Agent 框架。它是一套刻入
 │  ├── ag_indexer.py    代码图谱引擎 (AST/Regex 多语言解析)       │
 │  ├── ag_evolve.py     社区自进化引擎 (6源信息抓取 + 翻译)       │
 │  ├── ag_learning.py   深度学习引擎 (README/源码/API 解析)       │
+│  ├── ag_post_review.py 对话窗口物理审查闸门 (5维审查/BAT专项)   │
 │  └── repo_cache.py    仓库缓存                                  │
 │                                                                 │
 │  📡 dashboard/ ───────────────────── ← 指挥官大盘 (:8899)       │
@@ -71,7 +72,7 @@ Antigravity 不是一个 IDE，也不是一个 Agent 框架。它是一套刻入
 所有 AI 任务执行前必须穿透的 4 层洋葱防线：
 
 ```
-请求 ──→ [ContextHealth] ──→ [AutoMemory] ──→ [SurgicalCheck] ──→ [ValidationGate] ──→ 执行
+请求 ──→ [ContextHealth] ──→ [DynamicSkill] ──→ [AutoMemory] ──→ [SurgicalCheck] ──→ [ValidationGate] ──→ 执行
                                                                          │
                                                                     物理校验
                                                               (go test / npm build)
@@ -80,9 +81,12 @@ Antigravity 不是一个 IDE，也不是一个 Agent 框架。它是一套刻入
 | 层 | 名称 | 职责 |
 |----|------|------|
 | 1 | `ContextHealthMiddleware` | 评估上下文负荷，触发心理压缩 |
-| 2 | `AutoMemoryMiddleware` | 异步捕获坑点并自动生成 JSONL 校准库，随次数调整置信度 |
-| 3 | `SurgicalCheckMiddleware` | **军法处**：强接 `git diff` 引擎，若修改范围越界直接掐断执行 |
-| 4 | `ValidationGateMiddleware` | **断头台**：全自动嗅探运行物理校验 (`npm test`/`go test`)，Exit Code ≠ 0 必定回炉。<br>连续 3 次失败触发 **3-Strike 熔断** |
+| 2 | `DynamicSkillMiddleware` | 运行时从技能库匹配并挂载最适合当前任务的技能卡 |
+| 3 | `AutoMemoryMiddleware` | 异步捕获坑点并自动生成 JSONL 校准库，随次数调整置信度 |
+| 4 | `SurgicalCheckMiddleware` | **军法处**：强接 `git diff` 引擎，若修改范围越界直接掐断执行 |
+| 5 | `ValidationGateMiddleware` | **断头台**：全自动嗅探运行物理校验 (`npm test`/`go test`)，Exit Code ≠ 0 必定回炉。<br>连续 3 次失败触发 **3-Strike 熔断** |
+
+**对话窗口入口** (`ag_post_review.py`)：将上述中间件能力暴露为命令行工具，使大模型在对话中可通过 `run_command` 调用物理审查，输出不可伪造的结构化报告。
 
 ### 2. 代码图谱引擎 (`ag_core/ag_indexer.py`)
 
@@ -307,6 +311,7 @@ sh ag_log "@Commander" "MessageStatus" "系统已就绪"
 │   ├── ag_indexer.py           # 代码图谱引擎
 │   ├── ag_evolve.py            # 社区自进化引擎
 │   ├── ag_learning.py          # 深度学习引擎
+│   ├── ag_post_review.py       # 对话窗口物理审查闸门
 │   └── repo_cache.py           # 仓库缓存
 ├── dashboard/                  # War Room 大盘
 │   ├── server.py               # 后端 (Python HTTP)
@@ -338,8 +343,9 @@ sh ag_log "@Commander" "MessageStatus" "系统已就绪"
 - [x] V3.2 — Archon-Gate 中间件 + 神经元发报 + 11条铁律
 - [x] V3.3 — 代码图谱引擎 + 社区自进化 + 深度学习技能卡
 - [x] V3.4 — 🧬 Gstack 基因融合 (实体物理验证闭环 / 审美与脚本双向品控 / Review Army 矩阵)
-- [ ] V3.5 — MCP 协议编织 (让任何 IDE 或 Agent 无缝受控于 Antigravity 记忆核心)
-- [ ] V3.6 — 基于 Neo4j 的星系级项目知识图谱
+- [x] V3.5 — 🔒 执行纪律修复 (对话窗口物理审查闸门 / 行为锚定协议 / 中间件管线 5 层扩展)
+- [ ] V3.6 — MCP 协议编织 (让任何 IDE 或 Agent 无缝受控于 Antigravity 记忆核心)
+- [ ] V3.7 — 基于 Neo4j 的星系级项目知识图谱
 - [ ] V4.0 — 真并行 Agent 军团隔离网 (基于轻量容器层)
 
 ---

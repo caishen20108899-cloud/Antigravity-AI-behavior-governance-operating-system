@@ -15,6 +15,7 @@
 （空）
 
 ## ✅ 完成 / 已结案 (Done)
+- [x] Phase 5 执行纪律: 诊断 6 层防线激活率断裂 → 构建 ag_post_review.py 物理审查闸门 → 行为锚定协议(角色切换+交付单) → V3.5.0 Execution Discipline。
 - [x] Phase 4 深邃之心: 实装 3-Strike 熔断、UI好感度审查(Goodwill)、脚本极简DX约束(TTHW)、GBrain 隐性实体图谱建立。
 - [x] Phase 3 愿景达成: Question Tuning 提问拦截系统、智能置信度校准算法、Browser Ops 自动化操控图谱。
 - [x] Phase 2 强化: 引入结构化学习记忆引擎、覆盖率看门狗(ASCII 审计)、Review Army(并发专家轻量版)。
@@ -22,3 +23,4 @@
 - [x] @Commander 与用户确立 QA 测试执行蓝图。
 - [x] 测试 `ag_memory_mgr.py` 边界条件。
 - [x] 测试 `ag_init.sh` 跨级与防覆盖表现。
+
