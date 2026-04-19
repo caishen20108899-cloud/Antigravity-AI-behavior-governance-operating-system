@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/版本-V3.5.0_Execution--Discipline-blueviolet?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/版本-V3.6.0_Physical--Gate-blueviolet?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/依赖-零外部依赖-success?style=for-the-badge" />
   <img src="https://img.shields.io/badge/License-Private-red?style=for-the-badge" />
@@ -22,7 +22,7 @@ Antigravity 不是一个 IDE，也不是一个 Agent 框架。它是一套刻入
 ## 📐 系统架构
 
 ```text
-┌────────────────────── Antigravity V3.5.0 ExecDiscipline ───────────────┐
+┌────────────────────── Antigravity V3.6.0 Physical-Gate ────────────────┐
 │                                                                 │
 │  📜 GEMINI.md (11条铁律宪法)         ← AI 行为的最高法律        │
 │                                                                 │
@@ -357,8 +357,9 @@ sh ag_log "@Commander" "MessageStatus" "系统已就绪"
 - [x] V3.3 — 代码图谱引擎 + 社区自进化 + 深度学习技能卡
 - [x] V3.4 — 🧬 Gstack 基因融合 (实体物理验证闭环 / 审美与脚本双向品控 / Review Army 矩阵)
 - [x] V3.5 — 🔒 执行纪律修复 (对话窗口物理审查闸门 / 行为锚定协议 / 中间件管线 5 层扩展)
-- [ ] V3.6 — MCP 协议编织 (让任何 IDE 或 Agent 无缝受控于 Antigravity 记忆核心)
-- [ ] V3.7 — 基于 Neo4j 的星系级项目知识图谱
+- [x] V3.6 — 🛡️ 物理闸门 (Git pre-commit 三层审查 / Review Army v2.0 真实静态分析 / 全功能审计修复)
+- [ ] V3.7 — MCP 协议编织 (让任何 IDE 或 Agent 无缝受控于 Antigravity 记忆核心)
+- [ ] V3.8 — 基于 Neo4j 的星系级项目知识图谱
 - [ ] V4.0 — 真并行 Agent 军团隔离网 (基于轻量容器层)
 
 ---

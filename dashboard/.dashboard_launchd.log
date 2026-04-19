@@ -17702,3 +17702,4 @@ BrokenPipeError: [Errno 32] Broken pipe
 127.0.0.1 - - [19/Apr/2026 22:21:24] "GET /api/skills HTTP/1.1" 200 -
 127.0.0.1 - - [19/Apr/2026 22:21:24] "GET /api/events HTTP/1.1" 200 -
 127.0.0.1 - - [19/Apr/2026 22:21:24] "GET /api/issues HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2026 22:45:02] "GET /api/agents HTTP/1.1" 200 -

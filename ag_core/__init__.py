@@ -4,7 +4,7 @@
 from .event_logger import log_event
 from .dispatcher import AsyncGlobalDispatcher
 
-__version__ = "3.5.0"
+__version__ = "3.6.0"
 __all__ = [
     "log_event",
     "AsyncGlobalDispatcher",
