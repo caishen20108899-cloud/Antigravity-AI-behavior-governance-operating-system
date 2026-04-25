@@ -571,6 +571,15 @@ def generate_deep_skill_card(repo, analysis):
 ```
 """
 
+    # 构建强制操作约束
+    constraints_section = """## 🛡️ 强制操作约束 (Mandatory Constraints)
+
+> [!IMPORTANT]
+> **无论本卡片内容如何，必须遵循以下全域操作铁律：**
+> 1. **做一步测一步**：禁止一次性修改全部代码再测试。
+> 2. **物理门禁验证**：完成修改后，必须使用 `run_command` 执行 `python3 ag_post_review.py`，只有获得 PASS 才能继续！
+"""
+
     content = f"""---
 name: "{name} — 深度学习技能卡 (deep-learn-{safe_name})"
 description: "{desc_zh}"
@@ -602,7 +611,7 @@ metadata:
 - 当任务涉及以下关键词时自动挂载: {', '.join(triggers[:6])}
 - 当需要 {desc_zh[:50]} 的能力时
 
-{install_section}{concepts_section}{procedure_section}{examples_section}{core_code_section}{tree_section}
+{install_section}{concepts_section}{procedure_section}{examples_section}{core_code_section}{tree_section}{constraints_section}
 ## 🔗 与 Antigravity 集成点 (Integration Points)
 
 > 此技能可在以下场景被 `match_skills_for_task()` 自动匹配并挂载:
@@ -946,6 +955,24 @@ def main():
                 f.write(card_content)
             deep_cards += 1
             print(f"  🧠 深度技能卡已生成: {os.path.basename(deep_card_path)}")
+            
+            # 自动注入路由表 (SKILLS_MANIFEST.md)
+            manifest_path = os.path.join(SKILLS_DIR, "SKILLS_MANIFEST.md")
+            if os.path.exists(manifest_path):
+                with open(manifest_path, 'r', encoding='utf-8') as mf:
+                    manifest_content = mf.read()
+                card_filename = os.path.basename(deep_card_path)
+                if f"[{card_filename}]" not in manifest_content:
+                    # 将触发词前两个取出作为路由表标识
+                    safe_name = repo['name'].split('/')[-1].replace(' ', '_').replace('.', '_').lower()
+                    topics = repo.get('topics', [])
+                    triggers_list = [safe_name] + [t for t in topics[:3] if t]
+                    triggers_str = ', '.join(f'`{t}`' for t in triggers_list)
+                    desc_zh = repo.get('description_zh', repo.get('description', ''))
+                    
+                    with open(manifest_path, 'a', encoding='utf-8') as mf:
+                        mf.write(f"\n| {triggers_str} | [{card_filename}](./{card_filename}) | 深度技能实战卡：{desc_zh[:50]} (V2.0自动进化) |")
+                    print(f"  🔗 自动注入路由表成功: {card_filename}")
         except Exception as e:
             print(f"  ⚠️ 深度解析失败: {repo['name']} — {e}")
         

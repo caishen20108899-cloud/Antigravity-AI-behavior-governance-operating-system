@@ -9,8 +9,8 @@ metadata:
     tags: [深度学习, Python, 实战技能]
     category: DeepLearned
     source: "https://github.com/langflow-ai/langflow"
-    stars: 146896
-    discovered: "2026-04-14"
+    stars: 147224
+    discovered: "2026-04-22"
     depth: "deep"
     requires_tools: [run_command]
     trigger_conditions: ["langflow", "agents", "chatgpt", "generative-ai", "large-language-models", "multiagent"]
@@ -18,8 +18,8 @@ metadata:
 
 # 🧠 深度学习技能卡: langflow
 
-> 由 ag_evolve V2.0 深度解析引擎自动生成 | 2026-04-14
-> 原始仓库: [langflow-ai/langflow](https://github.com/langflow-ai/langflow) | ⭐ 146,896 | Python
+> 由 ag_evolve V2.0 深度解析引擎自动生成 | 2026-04-22
+> 原始仓库: [langflow-ai/langflow](https://github.com/langflow-ai/langflow) | ⭐ 147,224 | Python
 
 ## 📋 概要
 Langflow 是一个强大的工具，用于构建和部署人工智能驱动的代理和工作流程。
@@ -40,6 +40,9 @@ pip install langflow -U
 - 🖥️  Langflow Desktop
 - ⚡️ Quickstart
 - 📦 Other install options
+- 🛡️ Security
+- 🚀 Deployment
+- ⭐ Stay up-to-date
 ## 💻 代码示例 (Code Examples)
 
 ### 示例 1
@@ -67,6 +70,8 @@ If you've cloned this repository and want to contribute, run this command from t
 ## 📁 项目结构概览
 
 ```
+  .agents
+  .agents/skills
   .coderabbit.yaml
   .composio.lock
   .cursor
@@ -85,8 +90,6 @@ If you've cloned this repository and want to contribute, run this command from t
   .github/actionlint.yaml
   .github/actions
   .github/changes-filter.yaml
-  .github/dependabot.yml
-  .github/release.yml
 ```
 
 ## 🔗 与 Antigravity 集成点 (Integration Points)

@@ -212,7 +212,7 @@ class DashboardHandler(http.server.SimpleHTTPRequestHandler):
                                         if status_str:
                                             issues.append({
                                                 "project": f"AI核心阵列 ({task_file.parent.name[:6]})",
-                                                "content": f"[Issue-SYS] | 指派: [@统领/国防部] | 状态: {status_str} | {content}"
+                                                "content": f"[Issue-SYS] | 指派: [@Commander] | 状态: {status_str} | {content}"
                                             })
                     except Exception:
                         pass

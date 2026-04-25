@@ -9,8 +9,8 @@ metadata:
     tags: [深度学习, TypeScript, 实战技能]
     category: DeepLearned
     source: "https://github.com/langgenius/dify"
-    stars: 137583
-    discovered: "2026-04-14"
+    stars: 138676
+    discovered: "2026-04-22"
     depth: "deep"
     requires_tools: [run_command]
     trigger_conditions: ["dify", "agent", "agentic-ai", "agentic-framework", "agentic-workflow", "ai"]
@@ -18,8 +18,8 @@ metadata:
 
 # 🧠 深度学习技能卡: dify
 
-> 由 ag_evolve V2.0 深度解析引擎自动生成 | 2026-04-14
-> 原始仓库: [langgenius/dify](https://github.com/langgenius/dify) | ⭐ 137,583 | TypeScript
+> 由 ag_evolve V2.0 深度解析引擎自动生成 | 2026-04-22
+> 原始仓库: [langgenius/dify](https://github.com/langgenius/dify) | ⭐ 138,676 | TypeScript
 
 ## 📋 概要
 用于代理工作流程开发的生产就绪平台。

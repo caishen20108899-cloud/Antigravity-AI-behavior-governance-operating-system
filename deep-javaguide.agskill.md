@@ -1,6 +1,6 @@
 ---
 name: "JavaGuide — 深度学习技能卡 (deep-learn-javaguide)"
-description: "Java面试和远程通用面试指南，覆盖计算机基础、数据库、高并发、系统设计与AI应用开发"
+description: "Java面试&远程通用面试指南，覆盖计算机基础、数据库、全局、高并发、系统设计与AI应用开发"
 version: 2.0.0
 author: "@社区自进化引擎 (深度学习)"
 compatibility: "Antigravity v3.3"
@@ -9,8 +9,8 @@ metadata:
     tags: [深度学习, Java, 实战技能]
     category: DeepLearned
     source: "https://github.com/Snailclimb/JavaGuide"
-    stars: 154917
-    discovered: "2026-04-14"
+    stars: 155130
+    discovered: "2026-04-22"
     depth: "deep"
     requires_tools: [run_command]
     trigger_conditions: ["javaguide", "agent", "context-engineering", "interview", "java", "jvm"]
@@ -18,16 +18,16 @@ metadata:
 
 # 🧠 深度学习技能卡: JavaGuide
 
-> 由 ag_evolve V2.0 深度解析引擎自动生成 | 2026-04-14
-> 原始仓库: [Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide) | ⭐ 154,917 | Java
+> 由 ag_evolve V2.0 深度解析引擎自动生成 | 2026-04-22
+> 原始仓库: [Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide) | ⭐ 155,130 | Java
 
 ## 📋 概要
-Java面试和远程通用面试指南，覆盖计算机基础、数据库、高并发、系统设计与AI应用开发
+Java面试&远程通用面试指南，覆盖计算机基础、数据库、全局、高并发、系统设计与AI应用开发
 
 ## 🎯 挂载与触发 (When to Mount)
 
 - 当任务涉及以下关键词时自动挂载: javaguide, agent, context-engineering, interview, java, jvm
-- 当需要 Java面试和远程通用面试指南，覆盖计算机基础、数据库、高并发、系统设计与AI应用开发 的能力时
+- 当需要 Java面试&远程通用面试指南，覆盖计算机基础、数据库、全局、高并发、系统设计与AI应用开发 的能力时
 
 ## 📖 核心概念 (Key Concepts)
 

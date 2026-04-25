@@ -19,6 +19,7 @@
 | `dify`, `agentic-workflow` | [deep-dify.agskill.md](./deep-dify.agskill.md) | 深度技能实战卡：针对 Dify 工作流的系统核心编排代码 (V2.0自动进化) |
 | `langflow`, `multiagent` | [deep-langflow.agskill.md](./deep-langflow.agskill.md) | 深度技能实战卡：构建和部署 AI 代理的低代码库 (V2.0自动进化) |
 | `firecrawl`, `ai-crawler`, `ai-scraping` | [deep-firecrawl.agskill.md](./deep-firecrawl.agskill.md) | 深度技能实战卡：适用于代理和数据采集的 Web 爬取工具 (V2.0自动进化) |
+| `java`, `面试`, `高并发`, `系统设计`, `javaguide` | [deep-javaguide.agskill.md](./deep-javaguide.agskill.md) | 深度技能实战卡：Java面试&远程通用面试指南，覆盖计算机基础、数据库、全局、高并发、系统设计与AI应用开发 (V2.0自动进化) |
 
 ---
 **提示**：所有在此注册的技能，必须遵循《不可逆操作强备逻辑沙盒协议 (Mandatory Sandbox Backup Gate)》。
